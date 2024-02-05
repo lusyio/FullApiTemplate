@@ -19,6 +19,8 @@ export const useAuthStore = defineStore('auth', () => {
     const user = ref < User | null>(null)
     const isLoggedIn = computed(() => !!user.value)
     const userError = ref <any>(null)
+
+    //Fetch User
     async function fetchUser() {
         const {data,error} = await useApiFetch('/api/user');
         if(data.value){
@@ -30,6 +32,7 @@ export const useAuthStore = defineStore('auth', () => {
             data,error
         }
     }
+    //Register User
     async function register(info: UserInfo){
         await useApiFetch('/sanctum/csrf-cookie');
         const registerRespose = await useApiFetch('/auth/register',{
@@ -40,14 +43,15 @@ export const useAuthStore = defineStore('auth', () => {
         navigateTo('/guest/login')
         return registerRespose;
     }
+    //Login User
     async function login(credentials: UserCredential){
         await useApiFetch('/sanctum/csrf-cookie');
         const loginResponse = await useApiFetch('/auth/login',{
           method: 'POST',
           body: credentials as UserCredential
         });
-        navigateTo('/auth/dashboard',{replace:true})
-        fetchUser()
+        await fetchUser()
+        navigateTo('/auth/dashboard')
         return loginResponse;
     }
     async function logout(){

@@ -1,20 +1,14 @@
 <script lang="ts" setup>
-definePageMeta({
-  middleware: 'guest-limit'
-})
 const formData = ref({
   email:'test@example.com',
   password: 'password'
 })
 const auth = useAuthStore()
 async function handleFormSubmission(){
-  if(auth.isLoggedIn){
-    return navigateTo('/auth/dashboard',{replace:true})
-  }
+  if(auth.isLoggedIn)return
 await auth.login(formData.value)
 }
 </script>
-
 <template>
   <div>
     <h2 class="title">Login</h2>

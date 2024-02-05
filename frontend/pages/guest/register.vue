@@ -8,8 +8,9 @@ const formData = ref({
   password: 'password',
   password_confirmation: 'password'
 })
+const auth = useAuthStore()
 async function handleFormSubmission(){
-  console.log('register',formData)
+ await auth.register(formData.value)
 }
 </script>
 
