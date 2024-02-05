@@ -1,3 +1,6 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    console.log('guest')
+    const auth = useAuthStore()
+    if(auth.isLoggedIn){
+      return  navigateTo('/auth/dashboard',{replace:true})
+    }
 })

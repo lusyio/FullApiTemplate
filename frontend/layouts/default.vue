@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+const auth = useAuthStore()
 async function handleLogout(){
-  console.log('logout')
+  await auth.logout()
 }
 </script>
 
@@ -10,8 +11,8 @@ async function handleLogout(){
       <li><nuxt-link to="/">Home</nuxt-link></li>
       <li><nuxt-link to="/auth/dashboard">Dashboard</nuxt-link></li>
       <li><nuxt-link to="/guest/register">Register</nuxt-link></li>
-      <li><nuxt-link to="/guest/login">Login</nuxt-link></li>
-      <li><nuxt-link to="/#" @click.prevent="handleLogout">Logout</nuxt-link></li>
+      <li  v-if="!auth.isLoggedIn"><nuxt-link to="/guest/login">Login</nuxt-link></li>
+      <li v-if="auth.isLoggedIn"  @click.prevent="handleLogout"><nuxt-link to="/#">Logout</nuxt-link></li>
     </ul>
     <div class="content">
       <slot />

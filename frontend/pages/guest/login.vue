@@ -6,8 +6,12 @@ const formData = ref({
   email:'test@example.com',
   password: 'password'
 })
+const auth = useAuthStore()
 async function handleFormSubmission(){
-  console.log('login')
+  if(auth.isLoggedIn){
+    return navigateTo('/auth/dashboard',{replace:true})
+  }
+await auth.login(formData.value)
 }
 </script>
 

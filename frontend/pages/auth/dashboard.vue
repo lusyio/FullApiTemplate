@@ -2,15 +2,15 @@
 definePageMeta({
   middleware: 'auth-limit'
 })
-const user = ref({}) 
+const auth = useAuthStore()
 </script>
 <template>
   <div>
     <h2 class="title">Dashboard</h2>
     <p class="text-md">User</p>
-    <pre>
-      {{ user  }}
-    </pre>
+    <p class=" text-blue-800">{{ auth.user?.id }}</p>
+    <p class=" text-blue-800">{{ auth.user?.name }}</p>
+    <p class=" text-blue-800">{{ auth.user?.email }}</p>
   </div>
 </template>
 
