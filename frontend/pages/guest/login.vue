@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
 const formData = ref({
   email:'test@example.com',
   password: 'password'
@@ -8,10 +12,23 @@ async function handleFormSubmission(){
   if(auth.isLoggedIn)return
 await auth.login(formData.value)
 }
+
+
+async function getPage(){
+  await useApiFetch('/sanctum/csrf-cookie');
+  const registerRespose = await useApiFetch('/api/page/get',{
+    method: 'POST',
+    body: {
+      url: route
+    }
+  });
+  // console.log(registerRespose)
+  return registerRespose;
+}
 </script>
 <template>
   <div>
-    <h2 class="title">Login</h2>
+    <h2 class="title" @click="getPage">Login</h2>
     <div class="login-form">
       <form @submit.prevent="handleFormSubmission">
       <div class="form-input">

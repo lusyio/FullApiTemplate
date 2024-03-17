@@ -1,30 +1,22 @@
 services:
 
-  template_backend:
-    container_name: template_backend
+  backend:
+    container_name: backend
     build: .
     restart: unless-stopped
     volumes:
-      - ./template_backend:/var/www/html
+      - ./backend:/var/www/html
     ports:
       - 8000:80
 
   mysql_db:
     container_name: mysql_db_backend
-    image: mysql:8.0.33
+    image: mariadb:10.5.8
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: template_backend
+      MYSQL_DATABASE: backend
     # volumes:
     #   - ./backups:/home/backups
     restart: unless-stopped
     ports:
     - 3300:3306
-  
-  phpmyadmin:
-    container_name: phpmyadmin_backend
-    image: phpmyadmin:5.2.1
-    ports:
-      - 8011:80
-    environment:
-      - PMA_ARBITRARY=1

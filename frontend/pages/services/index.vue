@@ -2,24 +2,21 @@
 import {ref, onMounted} from 'vue'
 import {useRoute} from 'vue-router'
 
-interface Block {
-  id: number;
-  key: string;
-  sort: number;
-  data: {
-    header: string;
-    text: string;
-  }
+interface Item {
+  id: number
+  title: string
+  url: string
+  content: string
 }
 
 interface Info {
-  blocks?: Block[];
-  title: string;
-  description: string;
+  items?: Item[]
+  title: string
+  description: string
 }
 
 let info = ref<Info>({title: '', description: ''});
-let blocks = ref<Block[]>([]);
+let items = ref<Item[]>([]);
 
 const route = useRoute()
 
@@ -35,7 +32,7 @@ async function fetchData() {
     });
 
     info.value = response.data.value as Info;
-    blocks.value = info.value.blocks || [];
+    items.value = info.value.items || [];
   } catch (error) {
     console.error('Ошибка при получении данных:', error);
   }
@@ -49,18 +46,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="blocks.length">
-    <div v-for="block in blocks" :key="block.id">
-      <HeaderText v-if="block.key === 'HeaderText'"
-                  :header="block.data.header"
-                  :text="block.data.text"
-      />
-    </div>
+  <div v-if="items.length">
+    <ul>
+      <li v-for="item in items" :key="item.id">
+        <nuxt-link :to="'/services/' + item.url">{{ item.title }}</nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <style scoped>
-#blocks {
+#items {
   display: block;
 }
 </style>

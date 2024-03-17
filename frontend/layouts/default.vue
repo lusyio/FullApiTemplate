@@ -8,11 +8,12 @@ async function handleLogout(){
 <template>
   <div class=" p-2">
     <ul class=" bg-orange-100 flex flex-grow justify-center">
-      <li><nuxt-link to="/">Home</nuxt-link></li>
-      <li><nuxt-link to="/auth/dashboard">Dashboard</nuxt-link></li>
-      <li v-if="!auth.isLoggedIn"><nuxt-link to="/guest/register">Register</nuxt-link></li>
-      <li  v-if="!auth.isLoggedIn"><nuxt-link to="/guest/login">Login</nuxt-link></li>
-      <li v-if="auth.isLoggedIn"  @click.prevent="handleLogout"><nuxt-link to="/#">Logout</nuxt-link></li>
+      <li><nuxt-link to="/">Главная</nuxt-link></li>
+      <li><nuxt-link to="/services">Услуги</nuxt-link></li>
+      <li><nuxt-link to="/auth/dashboard">Информация</nuxt-link></li>
+      <li v-if="!auth.isLoggedIn"><nuxt-link to="/guest/register">Регистрация</nuxt-link></li>
+      <li  v-if="!auth.isLoggedIn"><nuxt-link to="/guest/login">Авторизация</nuxt-link></li>
+      <li v-if="auth.isLoggedIn"  @click.prevent="handleLogout"><nuxt-link to="/#">Выйти</nuxt-link></li>
     </ul>
     <div class="content">
       <slot />
