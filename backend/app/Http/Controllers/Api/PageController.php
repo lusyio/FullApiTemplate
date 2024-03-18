@@ -15,20 +15,59 @@ class PageController extends Controller
         $url = $request->url;
         $items = [];
 
-        $page = Page::query()
-            ->with('blocks')
-            ->where('url', $url)
-            ->first();
+        if (strpos($url, 'services')) {
+            $url = str_replace('/services/', "", $url);
+            if ($url) {
+                $service = Service::query()
+                    ->where('url', $url)
+                    ->first();
 
-        if ($url === '/services') {
-            $items = Service::all();
+                if ($service) {
+
+                    return [
+                        'blocks' => [],
+                        'title' => $service->title,
+                        'description' => null,
+                        'items' => []
+                    ];
+                } else {
+                    return response()->json([
+                        'blocks' => [],
+                        'title' => null,
+                        'description' => null,
+                        'items' => []
+                    ], 404);
+                }
+            }
+        } else {
+
+            $page = Page::query()
+                ->with('blocks')
+                ->where('url', $url)
+                ->first();
+
+            if ($page) {
+
+                if ($url === '/services') {
+                    $items = Service::all();
+                }
+
+                return [
+                    'blocks' => PageBlockResource::collection($page->blocks),
+                    'title' => $page->title,
+                    'description' => $page->description,
+                    'items' => $items
+                ];
+            } else {
+                return response()->json([
+                    'blocks' => [],
+                    'title' => null,
+                    'description' => null,
+                    'items' => []
+                ], 404);
+            }
         }
 
-        return [
-            'blocks' => PageBlockResource::collection($page?->blocks),
-            'title' => $page?->title,
-            'description' => $page?->description,
-            'items' => $items
-        ];
+
     }
 }
