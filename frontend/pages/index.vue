@@ -1,66 +1,42 @@
+<template>
+    <div v-if="page?.blocks?.length">
+        <div v-for="block in page.blocks" :key="block.id">
+            <HeaderText v-if="block.key === 'HeaderText'" :header="block.data.header" :text="block.data.text" />
+        </div>
+    </div>
+</template>
 <script setup lang="ts">
-import {ref, onMounted} from 'vue'
-import {useRoute} from 'vue-router'
-
 interface Block {
-  id: number;
-  key: string;
-  sort: number;
-  data: {
-    header: string;
-    text: string;
-  }
+    id: number;
+    key: string;
+    sort: number;
+    data: {
+        header: string;
+        text: string;
+    }
 }
 
-interface Info {
-  blocks?: Block[];
-  title: string;
-  description: string;
+interface PageIndex {
+    blocks?: Block[];
+    title: string;
+    description: string;
 }
-
-let info = ref<Info>({title: '', description: ''});
-let blocks = ref<Block[]>([]);
-
 const route = useRoute()
 
-async function fetchData() {
-  await useApiFetch('/sanctum/csrf-cookie');
-  try {
-    const response = await useApiFetch('/api/page/get', {
-      method: 'POST',
-      body: {
+await useApiFetch('/sanctum/csrf-cookie')
+const { data: page, error } = await useApiFetch<PageIndex>('/api/page/get', {
+    method: 'POST',
+    body: {
         url: route.path
-      },
-      headers: {'Content-Type': 'application/json'}
-    });
+    },
+})
 
-    info.value = response.data.value as Info;
-    blocks.value = info.value.blocks || [];
-  } catch (error) {
-    console.error('Ошибка при получении данных:', error);
-  }
+if (error.value) {
+    console.error('Ошибка при получении данных:', error.value)
 }
 
-
-onMounted(() => {
-  fetchData();
-});
-
+useSeoMeta({
+    title: page.value?.title,
+    description: page.value?.description,
+})
 </script>
-
-<template>
-  <div v-if="blocks.length">
-    <div v-for="block in blocks" :key="block.id">
-      <HeaderText v-if="block.key === 'HeaderText'"
-                  :header="block.data.header"
-                  :text="block.data.text"
-      />
-    </div>
-  </div>
-</template>
-
-<style scoped>
-#blocks {
-  display: block;
-}
-</style>
