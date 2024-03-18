@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import {ref, onMounted} from 'vue'
-import {useRoute} from 'vue-router'
-
 interface Item {
   id: number
   title: string
@@ -9,54 +6,36 @@ interface Item {
   content: string
 }
 
-interface Info {
+interface PageServices {
   items?: Item[]
   title: string
   description: string
 }
 
-let info = ref<Info>({title: '', description: ''});
-let items = ref<Item[]>([]);
-
 const route = useRoute()
-
-async function fetchData() {
-  await useApiFetch('/sanctum/csrf-cookie');
-  try {
-    const response = await useApiFetch('/api/page/get', {
-      method: 'POST',
-      body: {
+await useApiFetch('/sanctum/csrf-cookie')
+const { data: page, error } = await useApiFetch<PageServices>('/api/page/get', {
+    method: 'POST',
+    body: {
         url: route.path
-      },
-      headers: {'Content-Type': 'application/json'}
-    });
+    },
+})
 
-    info.value = response.data.value as Info;
-    items.value = info.value.items || [];
-  } catch (error) {
-    console.error('Ошибка при получении данных:', error);
-  }
+if (error.value) {
+    console.error('Ошибка при получении данных:', error.value)
 }
-
-
-onMounted(() => {
-  fetchData();
-});
-
+useSeoMeta({
+    title:page.value?.title,
+    description:page.value?.description,
+})
 </script>
 
 <template>
-  <div v-if="items.length">
+  <div v-if="page?.items?.length">
     <ul>
-      <li v-for="item in items" :key="item.id">
-        <nuxt-link :to="'/services/' + item.url">{{ item.title }}</nuxt-link>
+      <li v-for="item in page?.items" :key="item.id">
+        <nuxt-link :to="`/services/${item.url}`">{{ item.title }}</nuxt-link>
       </li>
     </ul>
   </div>
 </template>
-
-<style scoped>
-#items {
-  display: block;
-}
-</style>
