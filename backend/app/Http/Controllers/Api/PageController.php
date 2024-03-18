@@ -15,7 +15,7 @@ class PageController extends Controller
         $url = $request->url;
         $items = [];
 
-        if (strpos($url, 'services')) {
+        if (strpos($url, 'services/')) {
             $url = str_replace('/services/', "", $url);
             if ($url) {
                 $service = Service::query()
