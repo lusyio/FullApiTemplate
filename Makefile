@@ -29,11 +29,11 @@ front: # сборка фротна. Js собирается на железе (�
 craft: # сборка фротна. Js собирается на железе (так быстрее), css внутри контейнера (потому что есть проблемы с библиотекой Node Sass)
 	cd ./craft-admin && composer config repositories.craftable-pro composer https://packages.craftable.pro/
 	cd ./craft-admin && composer require brackets/craftable-pro
-	docker exec -it web-app-start-template_craft-admin_1 php artisan craftable-pro:install
+	docker exec -it fullapitemplate_craft-admin_1 php artisan craftable-pro:install
 	cd ./craft-admin && npm install
 	make front
 	cd ./craft-admin && sudo chmod -R 777 resources
 
 migrate: # провести миграции
-	docker exec -it web-app-start-template_craft-admin_1 php artisan migrate
-	docker exec -it web-app-start-template_php-laravel-backend_1 php artisan migrate
+	docker exec -it fullapitemplate_craft-admin_1 php artisan migrate
+	docker exec -it fullapitemplate_php-laravel-backend_1 php artisan migrate
