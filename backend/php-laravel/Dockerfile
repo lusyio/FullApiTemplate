@@ -1,5 +1,5 @@
-# Используем официальный образ PHP 8.2 с Apache
-FROM php:8.2-apache
+# Используем официальный образ PHP 8.1 с Apache
+FROM php:8.1-apache
 
 # Устанавливаем необходимые зависимости
 RUN apt-get update && \
