@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+@function rgba-to-rgb($rgba, $background: #fff) {
+  @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%);
+}
+
+
+@function stripUnit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+@function rem($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+
+}

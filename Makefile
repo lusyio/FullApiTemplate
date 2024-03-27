@@ -1,35 +1,39 @@
-setup:
-	@make build
-	@make up 
-	@make composer-update
-	@make data
-	cd frontend && npm install && npm run dev
-build:
-	docker compose build 
-stop:
-	docker compose stop
-up:
-	docker compose up -d
+up: # Разворачивание и запуск
+	@echo 'Запуск Docker'
+	cp .env.example .env
+	cp ./backend/php-laravel/.env.example ./backend/php-laravel/.env
+	cp ./craft-admin/.env.example ./craft-admin/.env
+	@if [ ! -d "data" ]; then \
+		mkdir data; \
+	fi
+	@echo 'Устанавливаю зависимости'
+	cd ./craft-admin && composer install
+	cd ./craft-admin && php artisan key:generate
+	@echo 'Выдаю права'
+	sudo chmod -R 775 ./data
+	cd ./craft-admin && sudo chown -R www-data:www-data storage
+	cd ./craft-admin && sudo chmod -R 775 storage
+	@echo 'Собираю основной проект'
+	docker-compose up -d --build
+	@echo 'Подключение craftable'
+	make craft
+	make migrate
+	@echo 'Проект собран'
+	@echo 'Основное приложение: http://localhost:80/'
+	@echo 'Админка: http://localhost:8010/admin'
 
-composer-update:
-	docker exec backend bash -c "composer update --ignore-platform-reqs"
-	docker exec backend bash -c "cp .env.example .env"
-	docker exec backend bash -c "php artisan key:generate"
-	
-optimize:
-	docker exec backend bash -c "php artisan optimize:fresh"
-data:
-	docker exec backend bash -c "php artisan migrate:fresh --seed"
+front: # сборка фротна. Js собирается на железе (так быстрее), css внутри контейнера (потому что есть проблемы с библиотекой Node Sass)
+	cd ./craft-admin && npm run craftable-pro:build
+	@echo 'Фронт пересобран'
 
-bash:
-	docker exec -it backend bash
+craft: # сборка фротна. Js собирается на железе (так быстрее), css внутри контейнера (потому что есть проблемы с библиотекой Node Sass)
+	cd ./craft-admin && composer config repositories.craftable-pro composer https://packages.craftable.pro/
+	cd ./craft-admin && composer require brackets/craftable-pro
+	docker exec -it web-app-start-template_craft-admin_1 php artisan craftable-pro:install
+	cd ./craft-admin && npm install
+	make front
+	cd ./craft-admin && sudo chmod -R 777 resources
 
-fresh:
-	docker compose restart
-rmi:
-	docker image rm -f backend-backend
-logs: 
-	docker logs -f backend
-
-# backup_db: 
-	# docker exec mysql_db bash -c "./home/backups/backup_script.sh"
+migrate: # провести миграции
+	docker exec -it web-app-start-template_craft-admin_1 php artisan migrate
+	docker exec -it web-app-start-template_php-laravel-backend_1 php artisan migrate
