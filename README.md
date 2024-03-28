@@ -19,8 +19,8 @@
 4. Дефолтного админа (email - пароль) получите при сборке проекта ```make up```
 
 ## Структура проекта
-1. ~~Фронтенд ```/frontend/app-nuxt``` на Nuxt.js + VueX~~ (in dev)
-2. Фронтенд ```/frontend/app-vue``` на Vue.js + VueX
+1. Фронтенд ```/frontend/app-nuxt``` на Nuxt.js + VueX
+2. Фронтенд ```/frontend/app-vue``` на Vue.js + VueX (отключена сборка)
 3. REST API Бекенд ```/backend/php-laravel``` на php 8.1 и Laravel 10
 4. Админка ```/craft-admin``` на Laravel 10 + Craftable PRO 
 
