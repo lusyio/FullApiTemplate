@@ -1,0 +1,23 @@
+@import "header";
+
+.button-with-icon {
+  border-radius: rem(8px);
+  padding: rem(10px) rem(16px);
+  display: flex;
+  gap: rem(10px);
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font3);
+  font-weight: 400;
+  font-size: rem(13px);
+  line-height: 123%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.button-with-icon:hover {
+  background: rgba(255, 255, 255, .2);
+}

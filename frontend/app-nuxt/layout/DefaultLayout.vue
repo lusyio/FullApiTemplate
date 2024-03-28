@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <Header/>
-    <slot />
-    <Footer/>
+  <Header/>
+  <div class="website-main--outer">
+    <div class="website-main--inner">
+      <slot/>
+    </div>
   </div>
+  <Footer/>
 </template>
 
 <script>

@@ -1,20 +1,10 @@
 :root {
-    --font-family: "Inter", sans-serif;
-    --color-primary: #671eb5;
-    --color-success: #48c100;
-    --color-secondary: #00c1c8;
-    --color-white: #fff;
-    --color-tone-10: rgba(45, 60, 59, 0.1);
-    --color-danger: #e83b3b;
-    --color-warning: #ffb800;
-    --color-tone-20: rgba(55, 112, 119, 0.2);
-    --color-bg: #afceab;
-    --color-warning-hover: #ffc34f;
-    --color-warning-hover: #f00;
-    --color-success-hover: #59b621;
-    --color-primary-hover: #8f43e1;
-    --color-secondary-hover: #15e3eb;
-    --color-text: #1b2a37;
+    --font-family: "Manrope", sans-serif;
+    --second-family: "Bebas Neue", sans-serif;
+    --third-family: "Inter", sans-serif;
+    --font3: "Lato", sans-serif;
+    --font4: "Raleway", sans-serif;
+    --color-bg: #413e3e;
 }
 
 * {
@@ -32,7 +22,7 @@ body {
     background-color: var(--color-bg);
 }
 .container {
-    max-width: rem(1240px);
+    max-width: rem(1440px);
     padding: 0 rem(20px);
     margin: 0 auto;
 }
