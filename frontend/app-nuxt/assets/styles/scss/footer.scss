@@ -14,3 +14,57 @@
   align-items: center;
   height: rem(50px);
 }
+.page-footer--copyright {
+  font-family: var(--font3);
+  font-weight: 400;
+  font-size: rem(13px);
+  line-height: 123%;
+  letter-spacing: -0.03em;
+  color: #454b48;
+}
+.page-footer--feedback {
+  display: flex;
+  align-items: center;
+  gap: rem(20px);
+}
+.page-footer--feedback-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(10px);
+}
+.page-footer--feedback-phone {
+  font-family: var(--font3);
+  font-weight: 700;
+  font-size: rem(15px);
+  line-height: 107%;
+  letter-spacing: -0.03em;
+  color: #454b48;
+
+}
+.page-footer--feedback-make-order-link{
+  font-family: var(--font3);
+  font-weight: 400;
+  font-size: rem(13px);
+  line-height: 123%;
+  letter-spacing: -0.03em;
+  color: #454b48;
+  text-decoration: none;
+}
+.page-footer--feedback-button {
+  border-radius: rem(8px);
+  padding: rem(20px) rem(30px);
+  background: #da4813;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: rem(14px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.page-footer--logo-image {
+  width: rem(181px);
+  height: rem(43px);
+}

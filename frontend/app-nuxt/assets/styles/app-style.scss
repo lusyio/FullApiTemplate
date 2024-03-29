@@ -1,10 +1,12 @@
+@import 'fonts';
+
 :root {
     --font-family: "Manrope", sans-serif;
     --second-family: "Bebas Neue", sans-serif;
     --third-family: "Inter", sans-serif;
     --font3: "Lato", sans-serif;
     --font4: "Raleway", sans-serif;
-    --color-bg: #413e3e;
+    --color-bg: #fff;
 }
 
 * {
@@ -34,6 +36,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.website-main--inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 @media (max-width: 560px) {
 }

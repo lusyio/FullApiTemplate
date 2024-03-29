@@ -1,0 +1,431 @@
+.contacts-screen--outer {
+  display: flex;
+  width: 100%;
+  padding: rem(65px) rem(40px);
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts-screen--inner {
+  display: flex;
+  align-items: center;
+  background: #eaeaea;
+  gap: rem(20px);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.contacts-screen--content {
+  display: flex;
+  flex-direction: column;
+  gap: rem(100px);
+  padding: rem(40px) rem(0px) rem(40px) rem(50px);
+}
+
+.contacts-screen--map img {
+  height: rem(450px);
+}
+
+.contacts-screen--title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(48px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  color: #454b48;
+}
+
+.contacts-screen--content-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contacts-screen--content-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10px);
+}
+
+.contacts-screen--content-info-item-title {
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: rem(16px);
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #e0491f;
+}
+
+.contacts-screen--content-info-item-block {
+  display: flex;
+  gap: rem(17px);
+  align-items: center;
+}
+
+.contacts-screen--content-info-item-block img {
+  width: rem(32px);
+}
+
+.contacts-screen--content-info-item-block-text {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(24px);
+  line-height: 140%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #454b48;
+}
+
+
+// Serts
+
+.certificates-screen--outer {
+  display: flex;
+  width: 100%;
+  padding-top: rem(64px);
+}
+
+.certificates-screen--inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(40px);
+  width: 100%;
+}
+
+.certificates-screen--items-mobile {
+  display: none;
+}
+
+.certificates-screen--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.certificates-screen--header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+  align-items: flex-start;
+}
+
+.certificates-screen--header-subtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: rem(14px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #454b48;
+}
+
+.certificates-screen--header-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(48px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  color: #454b48;
+}
+
+.swiper__buttons {
+  display: flex;
+  gap: rem(5px);
+  align-items: center;
+}
+
+.swiper__buttons-button {
+  border-radius: 8px;
+  width: 64px;
+  height: 64px;
+  background: #f7f7f7;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  transition: all .2s;
+}
+
+.certificates-screen--items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.certificates-screen--items-item {
+  position: relative;
+  width: rem(314px);
+  height: rem(455px);
+}
+
+.certificates-screen--items-item-shadow--outer {
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: .65;
+  border-radius: rem(15px);
+  transform: rotate(180deg);
+}
+
+.certificates-screen--items-item-shadow--inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0 rem(20px) rem(30px);
+  transform: rotate(180deg);
+}
+
+.certificates-screen--items-item-info {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.certificates-screen--items-item-info-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(30px);
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #fff;
+
+}
+
+.certificates-screen--items-item-info-extensions {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: rem(15px);
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.certificates-screen--items-item-download {
+  border: rem(1px) solid rgba(37, 38, 43, 0.1);
+  border-radius: rem(8px);
+  width: rem(61px);
+  height: rem(61px);
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: rem(8px);
+}
+
+.certificates-screen--items-item-download:hover {
+  align-items: center;
+  justify-content: center;
+}
+
+// Cons
+
+.consultation-screen--outer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: rem(64px);
+}
+
+.consultation-screen--inner {
+  display: flex;
+  width: 100%;
+  border-radius: rem(16px);
+  padding: rem(30px) rem(34px);
+  background: url("/images/consultation.jpg") no-repeat center/cover;
+}
+
+.consultation-screen--content-left {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12px);
+}
+
+.consultation-screen--content-left-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(30px);
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.consultation-screen--content-left-text {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(52px);
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.consultation-screen--content-right {
+  display: flex;
+  flex-direction: column;
+  gap: rem(17px);
+}
+
+.consultation-screen--content-right-text {
+  font-family: var(--font4);
+  font-weight: 400;
+  font-size: rem(20px);
+  color: #fff;
+}
+
+.consultation-screen--content-right-button {
+  background: #fff;
+  border-radius: rem(8px);
+  width: rem(390px);
+  padding: rem(8px);
+  height: rem(64px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.consultation-screen--content-right-button span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: rem(16px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  color: #151515;
+}
+
+.consultation-screen--content-right-button img {
+  position: absolute;
+  bottom: rem(8px);
+  right: rem(8px);
+}
+
+//howWeWork
+.howWeWork-screen--outer {
+  width: 100%;
+  display: flex;
+  padding-top: rem(64px);
+}
+
+.howWeWork-screen--inner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: rem(40px);
+}
+
+.howWeWork-screen--title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: rem(48px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  color: #454b48;
+}
+
+.howWeWork-screen--content--mobile {
+  display: none
+}
+
+.howWeWork-screen--content {
+  display: flex;
+  width: 100%;
+  height: rem(190px);
+}
+
+.howWeWork-screen--content-items {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.howWeWork-screen--content-items-item {
+  display: flex;
+  position: absolute;
+  height: rem(189px);
+  width: rem(345px);
+  gap: rem(30px);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: url('/images/pages/main-page/how-we-work-item-bg.png') left no-repeat;
+  background-size: contain;
+
+  .howWeWork-screen--content-items-item-title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: rem(32px);
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #454b48;
+  }
+
+}
+
+.howWeWork-screen--content-items-item:nth-child(1) {
+  top: 0;
+  left: 0;
+  z-index: 6;
+  width: rem(300px);
+  background: url('/images/pages/main-page/how-we-work-first-item-bg.png') center no-repeat;
+  background-size: contain;
+}
+
+.howWeWork-screen--content-items-item:nth-child(2) {
+  top: 0;
+  z-index: 5;
+  padding-left: rem(40px);
+  left: rem(200px);
+}
+
+.howWeWork-screen--content-items-item:nth-child(3) {
+  top: 0;
+  z-index: 4;
+  left: rem(460px);
+  padding-left: rem(40px);
+}
+
+.howWeWork-screen--content-items-item:nth-child(4) {
+  top: 0;
+  z-index: 3;
+  padding-left: rem(30px);
+  left: rem(730px);
+}
+
+.howWeWork-screen--content-items-item:last-child {
+  right: 0;
+  z-index: 2;
+  width: rem(389px);
+  background: url('/images/pages/main-page/how-we-work-last-item-bg.png') center no-repeat;
+  background-size: contain;
+  padding-left: rem(20px);
+
+  .howWeWork-screen--content-items-item-title {
+    color: #fff;
+    width: rem(235px);
+  }
+
+}
+
