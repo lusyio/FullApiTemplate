@@ -97,8 +97,25 @@
     align-items: center;
 
     button {
-      background: none;
       border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
+  .page-header--right-mobile-phone-button {
+    width: rem(32);
+    background: #E0491F;
+    border-radius: 50%;
+    height: rem(32);
+  }
+  .page-header--right-mobile-menu-button {
+    width: rem(32);
+    height: rem(32);
+    border-radius: 50%;
+    background: #fff;
+  }
+  .page-header--bgblock {
+    clip-path: polygon(38% 0px, 33% 100%, 0% 100%, 0% 0%);
   }
 }

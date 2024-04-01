@@ -817,6 +817,10 @@
   flex-direction: column;
   gap: rem(13px);
 }
+.director-screen--inner-mobile {
+  display: none;
+  height: auto;
+}
 
 .director-screen--job {
   font-family: var(--font-family);
@@ -893,6 +897,9 @@
 
 
 @media (max-width: 800px) {
+  .welcome-screen-title {
+    width: 100%;
+  }
   .contacts-screen--outer {
     padding: 0;
     padding-top: rem(32px);
@@ -928,7 +935,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;о
+    align-items: center;
     gap: rem(20px);
   }
   .swiper__buttons {
@@ -983,12 +990,13 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 345px;
+    width: rem(345);
   }
   .howWeWork-screen--content-items-item {
     background: url('/images/pages/main-page/how-we-work-item-bg-mobile.png') left no-repeat;
     background-size: contain;
     padding: 0;
+    gap: rem(20);
   }
   .howWeWork-screen--content-items-item:last-child {
     background: url('/images/pages/main-page/how-we-work-item-bg-mobile-last.png') left no-repeat;
@@ -1035,4 +1043,83 @@
     padding: rem(20px) 0 0;
     height: rem(189px);
   }
+  /////////////////
+  .equipment-screen--outer {
+    padding: rem(32px) 0 0;
+  }
+  .equipment-screen--inner {
+    padding: rem(32px) rem(16px);
+  }
+  .equipment-screen--head {
+    flex-direction: column;
+    gap: rem(32px);
+    align-items: flex-start;
+  }
+  .equipment-screen--items {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .equipment-screen--head-menu {
+    flex-wrap: wrap;
+  }
+  /////////////////////
+  .services-screen--outer {
+    padding: rem(32px) rem(16px) 0;
+  }
+  .services-screen--head {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: rem(32px);
+  }
+  .services-screen--head-titles .title {
+    font-size: 32px;
+  }
+  .services-screen--head-titles {
+    width: 100%;
+  }
+  ////////
+  .advantages-screen--outer {
+    position: static;
+    padding: 0;
+  }
+  .advantages-screen--items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .director-screen--outer {
+    position: static;
+    padding: rem(32) rem(16);
+  }
+  .director-screen--inner-desktop {
+    display: none
+  }
+  .director-screen--inner-mobile {
+    display: flex
+  }
+  //////
+  .experts-screen--outer {
+    padding: rem(32) rem(16) rem(32);
+  }
+  .experts-screen--info {
+    width: 100%;
+  }
+  .experts-screen--inner {
+    flex-direction: column;
+    gap: rem(32);
+    .experts-screen--photo {
+      width: 100%;
+    }
+  }
+  .experts-screen--square {
+    height: rem(22);
+    width: rem(16);
+    left: rem(-5);
+    top: rem(34);
+  }
+  .experts-screen--info-title {
+    font-size: rem(32);
+  }
+
 }

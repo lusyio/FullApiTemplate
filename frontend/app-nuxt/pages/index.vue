@@ -32,6 +32,10 @@
           17025-2019
         </p>
       </div>
+      <div class="director-screen--inner director-screen--inner-mobile">
+        <p class="director-screen--job">Генеральный директор</p>
+        <p class="director-screen--name">О.В. Гадалова</p>
+      </div>
       <picture>
         <img class="experts-screen--photo" src="/images/expert.jpg" srcset="/images/expert@2x.jpg 2x" alt="Эксперт"/>
       </picture>
@@ -39,7 +43,7 @@
     <div class="experts-screen--square"></div>
   </div>
   <div class="director-screen--outer">
-    <div class="director-screen--inner">
+    <div class="director-screen--inner director-screen--inner-desktop">
       <p class="director-screen--job">Генеральный директор</p>
       <p class="director-screen--name">О.В. Гадалова</p>
     </div>

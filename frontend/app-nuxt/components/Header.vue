@@ -21,10 +21,10 @@
         <ButtonWithIcon route="/personal-cabinet" text="Личный кабинет" :image="'/images/icons/user.svg'"/>
       </div>
       <div class="page-header--right-mobile">
-        <button>
+        <button class="page-header--right-mobile-phone-button">
           <img src="/images/icons/phone-filled.svg" alt="Обратная связь"/>
         </button>
-        <button>
+        <button class="page-header--right-mobile-menu-button">
           <img src="/images/icons/burger.svg" alt="Мобильное меню"/>
         </button>
       </div>

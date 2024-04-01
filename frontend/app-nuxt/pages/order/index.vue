@@ -2,7 +2,7 @@
   <div class="preview-screen--outer">
     <div class="preview-screen--inner">
       <div class="preview-screen--info">
-        <div class="preview-screen--info-bread">
+        <div class="preview-screen--info-bread preview-screen--info-bread-mobile">
           <span class="preview-screen--info-bread-link">Главная</span> - <span class="preview-screen--info-bread-link-current">Сопровождение строительства</span>
         </div>
         <h1 class="preview-screen--info-title">Сопровождение объектов строительства</h1>
