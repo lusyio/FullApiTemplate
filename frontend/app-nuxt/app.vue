@@ -28,5 +28,6 @@ export default {
   justify-content: center;
   min-height: 100vh;
   position: relative;
+  align-items: center;
 }
 </style>

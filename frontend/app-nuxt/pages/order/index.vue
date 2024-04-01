@@ -30,7 +30,7 @@
       </picture>
     </div>
   </div>
-  <section class="experts-screen--outer experts--mobile">
+  <div class="experts-screen--outer experts--mobile">
     <div class="experts-screen--inner">
       <div class="experts-screen--info experts-screen--info-second-page">
         <h2 class="experts-screen--info-title title">Эксперты в исследовании строительных материалов</h2>
@@ -75,7 +75,7 @@
       </div>
     </div>
     <div class="experts-screen--square"></div>
-  </section>
+  </div>
   <div class="equipment-screen--outer">
     <div class="equipment-screen--inner">
       <div class="equipment-screen--head">

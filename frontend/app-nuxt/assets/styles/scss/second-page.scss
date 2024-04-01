@@ -38,7 +38,7 @@
 
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: rem(20px);
   line-height: 157%;
   color: #000;
   opacity: 0.7;
@@ -64,21 +64,23 @@
 .preview-screen--info-button {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: rem(16px);
   line-height: 87%;
   letter-spacing: -0.03em;
   color: #fff;
-  border-radius: 8px;
-  width: 284px;
-  height: 64px;
+  border-radius: rem(8px);
+  width: rem(284px);
+  height: rem(64px);
   background: #da4813;
   border: none;
-  padding: 0.75rem;
+  padding: rem(20px);
   position: relative;
   img {
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: rem(8px);
+    right: rem(8px);
+    width: rem(16px);
+    filter: invert(1);
   }
 }
 .experts-screen--info-second-page {

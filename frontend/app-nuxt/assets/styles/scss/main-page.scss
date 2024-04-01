@@ -139,9 +139,9 @@
 }
 
 .swiper__buttons-button {
-  border-radius: 8px;
-  width: 64px;
-  height: 64px;
+  border-radius: rem(8px);
+  width: rem(64px);
+  height: rem(64px);
   background: #f7f7f7;
   cursor: pointer;
   border: none;
@@ -182,6 +182,9 @@
   opacity: .65;
   border-radius: rem(15px);
   transform: rotate(180deg);
+}
+.certificates-screen--items-item-photo {
+  width: 100%;
 }
 
 .certificates-screen--items-item-shadow--inner {
@@ -319,6 +322,7 @@
   position: absolute;
   bottom: rem(8px);
   right: rem(8px);
+  width: rem(16px);
 }
 
 //howWeWork
@@ -376,7 +380,7 @@
   .howWeWork-screen--content-items-item-title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: rem(32px);
+    font-size: rem(26px);
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #454b48;
@@ -396,22 +400,22 @@
 .howWeWork-screen--content-items-item:nth-child(2) {
   top: 0;
   z-index: 5;
-  padding-left: rem(40px);
-  left: rem(200px);
+  padding-left: rem(80px);
+  left: rem(180px);
 }
 
 .howWeWork-screen--content-items-item:nth-child(3) {
   top: 0;
   z-index: 4;
-  left: rem(460px);
-  padding-left: rem(40px);
+  left: rem(430px);
+  padding-left: rem(70px);
 }
 
 .howWeWork-screen--content-items-item:nth-child(4) {
   top: 0;
   z-index: 3;
-  padding-left: rem(30px);
-  left: rem(730px);
+  padding-left: rem(60px);
+  left: rem(680px);
 }
 
 .howWeWork-screen--content-items-item:last-child {
@@ -420,7 +424,8 @@
   width: rem(389px);
   background: url('/images/pages/main-page/how-we-work-last-item-bg.png') center no-repeat;
   background-size: contain;
-  padding-left: rem(20px);
+  padding-left: rem(100px);
+  text-align: center;
 
   .howWeWork-screen--content-items-item-title {
     color: #fff;
@@ -477,18 +482,20 @@
   line-height: 87%;
   letter-spacing: -0.03em;
   color: #fff;
-  border-radius: 8px;
-  width: 284px;
-  height: 64px;
+  border-radius: rem(8px);
   background: #da4813;
   border: none;
+  width: rem(284px);
   padding: rem(12px);
+  height: rem(64px);
   position: relative;
 
   picture img {
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: rem(8px);
+    right: rem(8px);
+    width: rem(16px);
+    filter: invert(1);
   }
 }
 
@@ -497,7 +504,7 @@
 
 
 .equipment-screen--outer {
-  padding-top: rem(90px);
+  padding-top: rem(60px);
   display: flex;
   width: 100%;
   align-items: center;
@@ -625,8 +632,7 @@
 .advantages-screen--outer {
   padding-top: rem(80px);
   display: flex;
-  width: 100%;
-  max-width: 1270px;
+  max-width: rem(1270px);
   position: absolute;
   top: rem(100px);
   align-items: center;
@@ -714,22 +720,24 @@
 .services-screen--head-button {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: rem(16px);
   line-height: 87%;
   letter-spacing: -0.03em;
   color: #fff;
-  border-radius: 8px;
-  width: 284px;
-  height: 64px;
+  border-radius: rem(8px);
   background: #da4813;
+  width: rem(274px);
+  height: rem(64px);
   border: none;
-  padding: 0.75rem;
+  padding: rem(20px);
   position: relative;
 
   img {
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: rem(8px);
+    right: rem(8px);
+    width: rem(16px);
+    filter: invert(1);
   }
 }
 
@@ -811,7 +819,7 @@
 .director-screen--job {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
+  font-size: rem(14px);
   line-height: 157%;
   color: #e0491f;
   opacity: 0.7;
@@ -820,7 +828,7 @@
 .director-screen--name {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: rem(20px);
   line-height: 157%;
   color: #000;
   opacity: 0.7;
