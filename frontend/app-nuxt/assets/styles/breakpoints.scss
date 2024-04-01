@@ -37,9 +37,33 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 875px) {
   html {
-    font-size: 12px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 16px;
+  }
+  .welcome-screen--outer {
+    padding: rem(20px) rem(30px);
+
+  }
+  .welcome-screen--inner {
+    flex-direction: column;
+    height: 100%;
+    gap: rem(15px);
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .welcome-screen-title {
+    font-size: rem(64px);
+    height: auto;
+  }
+  .welcome-screen-right-text {
+    font-size: rem(16px);
   }
 }
 

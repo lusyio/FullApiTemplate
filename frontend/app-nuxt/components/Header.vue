@@ -4,7 +4,7 @@
     <div class="page-header--inner">
       <div class="page-header--left">
         <nuxt-link class="page-header--logo-link" to="/">
-          <img class="page-header--logo-img" src="../public/images/logo.svg" srcset="../public/images/logo@2x.svg 2x" alt="Лого"/>
+          <img class="page-header--logo-img" src="/images/logo.svg" srcset="/images/logo@2x.svg 2x" alt="Лого"/>
         </nuxt-link>
         <nav class="page-header--nav-menu">
           <ButtonWithIcon text="Каталог услуг" :image="'/images/icons/arrow-down.svg'"/>
@@ -22,10 +22,10 @@
       </div>
       <div class="page-header--right-mobile">
         <button>
-          <img src="../public/images/icons/phone-filled.svg" alt="Обратная связь"/>
+          <img src="/images/icons/phone-filled.svg" alt="Обратная связь"/>
         </button>
         <button>
-          <img src="../public/images/icons/burger.svg" alt="Мобильное меню"/>
+          <img src="/images/icons/burger.svg" alt="Мобильное меню"/>
         </button>
       </div>
     </div>

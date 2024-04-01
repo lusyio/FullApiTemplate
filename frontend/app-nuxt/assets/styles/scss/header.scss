@@ -83,3 +83,22 @@
   width: rem(181px);
   height: rem(43px);
 }
+
+@media (max-width: 800px){
+  .page-header--right {
+    display: none;
+  }
+  .page-header--nav-menu {
+    display: none;
+  }
+  .page-header--right-mobile {
+    display: flex;
+    gap: rem(5px);
+    align-items: center;
+
+    button {
+      background: none;
+      border: none;
+    }
+  }
+}

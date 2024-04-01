@@ -250,58 +250,6 @@
           </li>
         </ul>
       </div>
-      <div class="howWeWork-screen--content--mobile">
-        <picture>
-          <img src="/images/how-we-work-bg--mobile.png" alt="Подложка"/>
-        </picture>
-        <ul class="howWeWork-screen--content-items">
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/images/icons/send-order.svg" alt="Оставляете заявку"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Оставляете заявку</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/images/icons/going-to-object.svg" alt="Выезжаем на объект"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Выезжаем на объект</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/images/icons/get-document.svg" alt="Выдаем заключение"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Выдаем заключение</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/images/icons/save-document.svg" alt="Храним документации в личном кабинете"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Храним документации в личном кабинете</h6>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="consultation-screen--outer">
-    <div class="consultation-screen--inner">
-      <div class="consultation-screen--content-left">
-        <h6 class="consultation-screen--content-left-title">СТРОЙЭКСПЕРТ</h6>
-        <p class="consultation-screen--content-left-text">
-          Получите консультацию экспертов по необходимым испытаниям
-        </p>
-      </div>
-      <div class="consultation-screen--content-right">
-        <p class="consultation-screen--content-right-text">
-          Оставьте заявку, и наш менеджер свяжется с Вами в течение дня
-        </p>
-        <button class="consultation-screen--content-right-button">
-          <span>Получить консультацию и узнать стоимость</span>
-          <picture>
-            <img src="/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
-          </picture>
-        </button>
-      </div>
     </div>
   </div>
   <div class="certificates-screen--outer">
@@ -431,36 +379,19 @@
               srcset="/images/certificate@2x.jpg 2x"
               alt="Сертификат"
           /></picture>
-          <div class="certificates-screen--items-item-shadow"></div>
-          <div class="certificates-screen--items-item-info">
-            <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
-            <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
-          </div>
-          <div class="certificates-screen--items-item-download">
-            <img
-                class="certificates-screen--items-item-download-icon"
-                src="/images/icons/download.svg"
-                alt="Скачать сертификат"/>
-          </div>
-        </div>
-        <div class="certificates-screen--items-item">
-          <picture
-          ><img
-              class="certificates-screen--items-item-photo"
-              src="/images/certificate.jpg"
-              srcset="/images/certificate@2x.jpg 2x"
-              alt="Сертификат"
-          /></picture>
-          <div class="certificates-screen--items-item-shadow"></div>
-          <div class="certificates-screen--items-item-info">
-            <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
-            <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
-          </div>
-          <div class="certificates-screen--items-item-download">
-            <img
-                class="certificates-screen--items-item-download-icon"
-                src="/images/icons/download.svg"
-                alt="Скачать сертификат"/>
+          <div class="certificates-screen--items-item-shadow--outer">
+            <div class="certificates-screen--items-item-shadow--inner">
+              <div class="certificates-screen--items-item-info">
+                <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
+                <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
+              </div>
+              <div class="certificates-screen--items-item-download">
+                <img
+                    class="certificates-screen--items-item-download-icon"
+                    src="/images/icons/download.svg"
+                    alt="Скачать сертификат"/>
+              </div>
+            </div>
           </div>
         </div>
         <div class="certificates-screen--items-item">
@@ -471,16 +402,19 @@
               srcset="/images/certificate@2x.jpg 2x"
               alt="Сертификат"
           /></picture>
-          <div class="certificates-screen--items-item-shadow"></div>
-          <div class="certificates-screen--items-item-info">
-            <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
-            <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
-          </div>
-          <div class="certificates-screen--items-item-download">
-            <img
-                class="certificates-screen--items-item-download-icon"
-                src="/images/icons/download.svg"
-                alt="Скачать сертификат"/>
+          <div class="certificates-screen--items-item-shadow--outer">
+            <div class="certificates-screen--items-item-shadow--inner">
+              <div class="certificates-screen--items-item-info">
+                <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
+                <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
+              </div>
+              <div class="certificates-screen--items-item-download">
+                <img
+                    class="certificates-screen--items-item-download-icon"
+                    src="/images/icons/download.svg"
+                    alt="Скачать сертификат"/>
+              </div>
+            </div>
           </div>
         </div>
         <div class="certificates-screen--items-item">
@@ -491,16 +425,42 @@
               srcset="/images/certificate@2x.jpg 2x"
               alt="Сертификат"
           /></picture>
-          <div class="certificates-screen--items-item-shadow"></div>
-          <div class="certificates-screen--items-item-info">
-            <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
-            <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
+          <div class="certificates-screen--items-item-shadow--outer">
+            <div class="certificates-screen--items-item-shadow--inner">
+              <div class="certificates-screen--items-item-info">
+                <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
+                <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
+              </div>
+              <div class="certificates-screen--items-item-download">
+                <img
+                    class="certificates-screen--items-item-download-icon"
+                    src="/images/icons/download.svg"
+                    alt="Скачать сертификат"/>
+              </div>
+            </div>
           </div>
-          <div class="certificates-screen--items-item-download">
-            <img
-                class="certificates-screen--items-item-download-icon"
-                src="/images/icons/download.svg"
-                alt="Скачать сертификат"/>
+        </div>
+        <div class="certificates-screen--items-item">
+          <picture
+          ><img
+              class="certificates-screen--items-item-photo"
+              src="/images/certificate.jpg"
+              srcset="/images/certificate@2x.jpg 2x"
+              alt="Сертификат"
+          /></picture>
+          <div class="certificates-screen--items-item-shadow--outer">
+            <div class="certificates-screen--items-item-shadow--inner">
+              <div class="certificates-screen--items-item-info">
+                <h6 class="certificates-screen--items-item-info-title">Документ #1</h6>
+                <p class="certificates-screen--items-item-info-extensions">pdf, 2mb</p>
+              </div>
+              <div class="certificates-screen--items-item-download">
+                <img
+                    class="certificates-screen--items-item-download-icon"
+                    src="/images/icons/download.svg"
+                    alt="Скачать сертификат"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>

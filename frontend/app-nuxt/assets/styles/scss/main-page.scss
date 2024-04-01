@@ -183,6 +183,7 @@
   border-radius: rem(15px);
   transform: rotate(180deg);
 }
+
 .certificates-screen--items-item-photo {
   width: 100%;
 }
@@ -436,7 +437,7 @@
 
 .welcome-screen--outer {
   background: url(/images/welcome-banner.jpg) no-repeat center/cover;
-  width: rem(1400px);
+  width: 100%;
   display: flex;
   height: rem(651px);
   align-items: flex-end;
@@ -448,6 +449,7 @@
   align-items: flex-end;
   gap: rem(200px);
   height: rem(188px);
+  width: 100%;
 }
 
 .welcome-screen-title {
@@ -887,4 +889,150 @@
   top: rem(80px);
   left: rem(-100px);
   transform: skewX(-20deg);
+}
+
+
+@media (max-width: 800px) {
+  .contacts-screen--outer {
+    padding: 0;
+    padding-top: rem(32px);
+  }
+  .contacts-screen--inner {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contacts-screen--map img {
+    width: 100%;
+  }
+  .contacts-screen--content {
+    width: 100%;
+    padding: rem(32px) rem(16px);
+    gap: rem(24px);
+  }
+
+  //  CERTIFICATES
+  .certificates-screen--outer {
+    width: 100%;
+    padding: 0;
+    padding-top: rem(32px);
+  }
+  .certificates-screen--inner {
+    width: 100%;
+    padding: 0 rem(16px);
+    gap: rem(20px);
+  }
+  .certificates-screen--items {
+    display: none;
+  }
+  .certificates-screen--items-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;о
+    gap: rem(20px);
+  }
+  .swiper__buttons {
+    display: none;
+  }
+
+  .certificates-screen--items-item {
+    width: rem(400px);
+    height: auto;
+  }
+  .certificates-screen--items-item-photo {
+    width: 100%;
+  }
+
+  //  CONSULTATION
+
+  .consultation-screen--outer {
+    width: 100%;
+    padding: rem(32px) rem(16px) 0;
+  }
+  .consultation-screen--inner {
+    flex-direction: column;
+    width: 100%;
+    padding: rem(24px) rem(20px);
+    gap: rem(24px);
+  }
+  .consultation-screen--content-right {
+    gap: rem(80px);
+  }
+  .consultation-screen--content-right-button {
+    width: 100%;
+  }
+  .consultation-screen--content-left-text {
+    font-size: rem(32px);
+  }
+  //  HOWWEWORKS
+  .howWeWork-screen--outer {
+    width: 100%;
+    padding: rem(32px) rem(16px) 0;
+  }
+  .howWeWork-screen--inner {
+    width: 100%;
+  }
+  .howWeWork-screen--content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: rem(750px);
+  }
+  .howWeWork-screen--content-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 345px;
+  }
+  .howWeWork-screen--content-items-item {
+    background: url('/images/pages/main-page/how-we-work-item-bg-mobile.png') left no-repeat;
+    background-size: contain;
+    padding: 0;
+  }
+  .howWeWork-screen--content-items-item:last-child {
+    background: url('/images/pages/main-page/how-we-work-item-bg-mobile-last.png') left no-repeat;
+    background-size: contain;
+    left: 0;
+    top: rem(535px);
+    width: rem(345px);
+    padding: rem(40px) 0 0;
+    height: rem(211px);
+  }
+  .howWeWork-screen--content-items-item:first-child {
+    background: url('/images/pages/main-page/how-we-work-item-bg-mobile.png') left no-repeat;
+    background-size: contain;
+    left: 0;
+    top: 0;
+    width: rem(345px);
+    padding: rem(20px) 0 0;
+    height: rem(189px);
+  }
+  .howWeWork-screen--content-items-item:nth-child(2) {
+    background: url('/images/pages/main-page/how-we-work-item-bg-mobile.png') left no-repeat;
+    background-size: contain;
+    left: 0;
+    top: rem(130px);
+    width: rem(345px);
+    padding: rem(20px) 0 0;
+    height: rem(189px);
+  }
+  .howWeWork-screen--content-items-item:nth-child(3) {
+    background: url('/images/pages/main-page/how-we-work-item-bg-mobile.png') left no-repeat;
+    background-size: contain;
+    left: 0;
+    top: rem(265px);
+    width: rem(345px);
+    padding: rem(20px) 0 0;
+    height: rem(189px);
+  }
+  .howWeWork-screen--content-items-item:nth-child(4) {
+    background: url('/images/pages/main-page/how-we-work-item-bg-mobile.png') left no-repeat;
+    background-size: contain;
+    left: 0;
+    top: rem(400px);
+    width: rem(345px);
+    padding: rem(20px) 0 0;
+    height: rem(189px);
+  }
 }

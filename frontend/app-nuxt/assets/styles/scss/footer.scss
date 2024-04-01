@@ -68,3 +68,21 @@
   width: rem(181px);
   height: rem(43px);
 }
+
+@media (max-width: 800px) {
+  .page-footer--outer {
+    width: 100%;
+    padding: rem(32px) rem(16px);
+  }
+  .page-footer--inner {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: rem(32px);
+    height: auto;
+  }
+  .page-footer--feedback {
+    flex-direction: column;
+    align-items: center;
+  }
+}
