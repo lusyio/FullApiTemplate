@@ -5,22 +5,20 @@
     <div class="welcome-screen--inner">
       <h1 class="welcome-screen-title">Строительная лаборатория</h1>
       <div class="welcome-screen-right">
-        <div class="consultation-screen--content-right">
-          <p class="welcome-screen-right-text">Испытания всех строительных материалов</p>
-          <button class="welcome-screen-right-button">
-            <span>Запросить расчет испытаний</span>
-            <picture>
-              <img src="/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
-            </picture>
-          </button>
-        </div>
+        <p class="welcome-screen-right-text">Испытания всех строительных материалов</p>
+        <button class="welcome-screen-right-button">
+          <span>Запросить расчет испытаний</span>
+          <picture>
+            <img src="/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
+          </picture>
+        </button>
       </div>
     </div>
   </div>
   <div class="experts-screen--outer">
     <div class="experts-screen--inner">
       <div class="experts-screen--info">
-        <h2 class="experts-screen--info-title title">Эксперты в исследовании строительных материалов</h2>
+        <h2 class="experts-screen--info-title">Эксперты в исследовании строительных материалов</h2>
         <p class="experts-screen--info-text">
           Строительная лаборатория СтройЭксперт – команда специалистов объединивших свои усилия для выполнения работ в области проектирования,
           испытания строительных и дорожных материалов, обследования зданий и сооружений
@@ -34,10 +32,6 @@
           17025-2019
         </p>
       </div>
-      <div class="experts-screen--director">
-        <p class="experts-screen--director-job">Генеральный директор</p>
-        <p class="experts-screen--director-name">О.В. Гадалова</p>
-      </div>
       <picture>
         <img class="experts-screen--photo" src="/images/expert.jpg" srcset="/images/expert@2x.jpg 2x" alt="Эксперт"/>
       </picture>
@@ -49,63 +43,58 @@
       <p class="director-screen--job">Генеральный директор</p>
       <p class="director-screen--name">О.В. Гадалова</p>
     </div>
-  </div>
-  <div class="advantages-screen--outer">
-    <div class="advantages-screen--inner">
-      <div class="advantages-screen--items">
-        <div class="advantages--items-item">
-          <picture>
-            <img src="/images/icons/advantage.svg" alt="Современное оборудование"/>
-          </picture>
-          <div class="advantages--items-item-line"></div>
-          <h6 class="advantages--items-item-title">Современное оборудование</h6>
-          <p class="advantages--items-item-text">
-            Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
-          </p>
-        </div>
-        <div class="advantages--items-item">
-          <picture>
-            <img src="/images/icons/advantage.svg" alt="Современное оборудование"/>
-          </picture>
-          <div class="advantages--items-item-line"></div>
-          <h6 class="advantages--items-item-title">Современное оборудованиe</h6>
-          <p class="advantages--items-item-text">
-            Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
-          </p>
-        </div>
-        <div class="advantages--items-item">
-          <picture>
-            <img src="/images/icons/advantage.svg" alt="Аккредитация «СовАск»"/>
-          </picture>
-          <div class="advantages--items-item-line"></div>
-          <h6 class="advantages--items-item-title">Аккредитация «СовАск»</h6>
-          <p class="advantages--items-item-text">
-            Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
-          </p>
-        </div>
-        <div class="advantages--items-item">
-          <picture>
-            <img src="/images/icons/advantage.svg" alt="Работа 24/7"/>
-          </picture>
-          <div class="advantages--items-item-line"></div>
-          <h6 class="advantages--items-item-title">Работа 24/7</h6>
-          <p class="advantages--items-item-text">
-            Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
-          </p>
-        </div>
-        <div class="advantages--items-item">
-          <picture>
-            <img src="/images/icons/advantage.svg" alt="Актуальная нормативная база"/>
-          </picture>
-          <div class="advantages--items-item-line"></div>
-          <h6 class="advantages--items-item-title">Актуальная нормативная база</h6>
-          <p class="advantages--items-item-text">
-            Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
-          </p>
+    <div class="advantages-screen--outer">
+      <div class="advantages-screen--inner">
+        <div class="advantages-screen--items">
+          <div class="advantages--items-item">
+            <picture>
+              <img src="/images/icons/advantage.svg" alt="Современное оборудование"/>
+            </picture>
+            <div class="advantages--items-item-text-block">
+              <h6 class="advantages--items-item-title">Современное оборудование</h6>
+              <p class="advantages--items-item-text">
+                Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
+              </p>
+            </div>
+          </div>
+          <div class="advantages--items-item">
+            <picture>
+              <img src="/images/icons/advantage.svg" alt="Современное оборудование"/>
+            </picture>
+            <div class="advantages--items-item-text-block">
+              <h6 class="advantages--items-item-title">Современное оборудование</h6>
+              <p class="advantages--items-item-text">
+                Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
+              </p>
+            </div>
+          </div>
+          <div class="advantages--items-item">
+            <picture>
+              <img src="/images/icons/advantage.svg" alt="Современное оборудование"/>
+            </picture>
+            <div class="advantages--items-item-text-block">
+              <h6 class="advantages--items-item-title">Современное оборудование</h6>
+              <p class="advantages--items-item-text">
+                Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
+              </p>
+            </div>
+          </div>
+          <div class="advantages--items-item">
+            <picture>
+              <img src="/images/icons/advantage.svg" alt="Современное оборудование"/>
+            </picture>
+            <div class="advantages--items-item-text-block">
+              <h6 class="advantages--items-item-title">Современное оборудование</h6>
+              <p class="advantages--items-item-text">
+                Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="services-screen--outer">
     <div class="services-screen--inner">
       <div class="services-screen--head">
@@ -121,89 +110,34 @@
         </button>
       </div>
       <div class="services-screen--items">
-        <div class="services--items-item services--items-item--1">
+        <div class="services-screen--items-item services-screen--items-item--1">
           <img src="/images/service.jpg" alt="Услуга"/>
-          <div class="services--items-item-square"></div>
-          <div class="services--items-item-title">Сопровождение объектов строительства</div>
-          <button class="services--items-item-open">
-            <picture>
-              <img
-                  src="/images/icons/arrow-45deg.svg"
-                  alt="Открыть страницу услуги"
-                  class="services--items-item-open-arrow"/>
-            </picture>
-          </button>
+          <div class="services-screen--items-item-title">Сопровождение объектов строительства</div>
         </div>
-        <div class="services--items-item services--items-item--2">
+        <div class="services-screen--items-item services-screen--items-item--2">
           <img src="/images/service.jpg" alt="Услуга"/>
-          <div class="services--items-item-square"></div>
-          <div class="services--items-item-title">Сопровождение объектов строительства</div>
-          <button class="services--items-item-open">
-            <picture>
-              <img
-                  src="/images/icons/arrow-45deg.svg"
-                  alt="Открыть страницу услуги"
-                  class="services--items-item-open-arrow"/>
-            </picture>
-          </button>
+          <div class="services-screen--items-item-title">Сопровождение объектов строительства</div>
         </div>
-        <div class="services--items-item services--items-item--3">
+        <div class="services-screen--items-item services-screen--items-item--3">
           <img src="/images/service.jpg" alt="Услуга"/>
-          <div class="services--items-item-square"></div>
-          <div class="services--items-item-title">Сопровождение объектов строительства</div>
-          <button class="services--items-item-open">
-            <picture>
-              <img
-                  src="/images/icons/arrow-45deg.svg"
-                  alt="Открыть страницу услуги"
-                  class="services--items-item-open-arrow"/>
-            </picture>
-          </button>
+          <div class="services-screen--items-item-title">Сопровождение объектов строительства</div>
         </div>
-        <div class="services--items-item services--items-item--4">
+        <div class="services-screen--items-item services-screen--items-item--4">
           <img src="/images/service.jpg" alt="Услуга"/>
-          <div class="services--items-item-square"></div>
-          <div class="services--items-item-title">Сопровождение объектов строительства</div>
-          <button class="services--items-item-open">
-            <picture>
-              <img
-                  src="/images/icons/arrow-45deg.svg"
-                  alt="Открыть страницу услуги"
-                  class="services--items-item-open-arrow"/>
-            </picture>
-          </button>
+          <div class="services-screen--items-item-title">Сопровождение объектов строительства</div>
         </div>
-        <div class="services--items-item services--items-item--5">
+        <div class="services-screen--items-item services-screen--items-item--5">
           <img src="/images/service.jpg" alt="Услуга"/>
-          <div class="services--items-item-square"></div>
-          <div class="services--items-item-title">Сопровождение объектов строительства</div>
-          <button class="services--items-item-open">
-            <picture>
-              <img
-                  src="/images/icons/arrow-45deg.svg"
-                  alt="Открыть страницу услуги"
-                  class="services--items-item-open-arrow"/>
-            </picture>
-          </button>
+          <div class="services-screen--items-item-title">Сопровождение объектов строительства</div>
         </div>
-        <div class="services--items-item services--items-item--6">
+        <div class="services-screen--items-item services-screen--items-item--6">
           <img src="/images/service.jpg" alt="Услуга"/>
-          <div class="services--items-item-square"></div>
-          <div class="services--items-item-title">Сопровождение объектов строительства</div>
-          <button class="services--items-item-open">
-            <picture>
-              <img
-                  src="/images/icons/arrow-45deg.svg"
-                  alt="Открыть страницу услуги"
-                  class="services--items-item-open-arrow"/>
-            </picture>
-          </button>
+          <div class="services-screen--items-item-title">Сопровождение объектов строительства</div>
         </div>
       </div>
-      <button class="services-screen--more">Показать еще</button>
     </div>
   </div>
-  <div class="equipment-screen--outer">
+  <div class="equipment-screen--outer" id="equipment">
     <div class="equipment-screen--inner">
       <div class="equipment-screen--head">
         <div class="equipment-screen--head-titles">
@@ -211,7 +145,7 @@
           <h2 class="title">Используем современное оборудование</h2>
         </div>
         <nav class="equipment-screen--head-menu">
-          <button class="equipment-screen--head-menu-button">Бетон
+          <button class="equipment-screen--head-menu-button equipment-screen--head-menu-button-active">Бетон
           </button
           >
           <button class="equipment-screen--head-menu-button">Бетонная смесь
@@ -232,8 +166,10 @@
               src="/images/press-matest.jpg"
               alt="Пресс испытательный Matest"
           /></picture>
-          <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
-          <p class="equipment--items-item-tag">Category</p>
+          <div class="equipment--items-item-text-block">
+            <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
+            <p class="equipment--items-item-tag">Category</p>
+          </div>
         </div>
         <div class="equipment--items-item">
           <div class="equipment--items-item-shadow"></div>
@@ -243,8 +179,10 @@
               src="/images/press-matest.jpg"
               alt="Пресс испытательный Matest"
           /></picture>
-          <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
-          <p class="equipment--items-item-tag">Category</p>
+          <div class="equipment--items-item-text-block">
+            <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
+            <p class="equipment--items-item-tag">Category</p>
+          </div>
         </div>
         <div class="equipment--items-item">
           <div class="equipment--items-item-shadow"></div>
@@ -254,8 +192,10 @@
               src="/images/press-matest.jpg"
               alt="Пресс испытательный Matest"
           /></picture>
-          <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
-          <p class="equipment--items-item-tag">Category</p>
+          <div class="equipment--items-item-text-block">
+            <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
+            <p class="equipment--items-item-tag">Category</p>
+          </div>
         </div>
         <div class="equipment--items-item">
           <div class="equipment--items-item-shadow"></div>
@@ -265,8 +205,10 @@
               src="/images/press-matest.jpg"
               alt="Пресс испытательный Matest"
           /></picture>
-          <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
-          <p class="equipment--items-item-tag">Category</p>
+          <div class="equipment--items-item-text-block">
+            <h6 class="equipment--items-item-title">Пресс испытательный Matest</h6>
+            <p class="equipment--items-item-tag">Category</p>
+          </div>
         </div>
       </div>
     </div>
@@ -362,7 +304,6 @@
       </div>
     </div>
   </div>
-
   <div class="certificates-screen--outer">
     <div class="certificates-screen--inner">
       <div class="certificates-screen--header">

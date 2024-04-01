@@ -27,5 +27,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  position: relative;
 }
 </style>

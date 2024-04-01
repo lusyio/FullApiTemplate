@@ -3,9 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  padding: rem(30px) rem(60px);
+  position: absolute;
+  width: 100%;
+  padding: rem(30px) rem(65px);
   background: rgba(255, 255, 255, 0.12);
+  top: 0;
+  max-width: rem(1400px);
 }
 
 .page-header--bgblock {
