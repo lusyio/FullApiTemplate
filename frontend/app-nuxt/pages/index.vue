@@ -137,7 +137,7 @@
       </div>
     </div>
   </div>
-  <div class="equipment-screen--outer" id="equipment">
+  <div class="equipment-screen--outer" >
     <div class="equipment-screen--inner">
       <div class="equipment-screen--head">
         <div class="equipment-screen--head-titles">
