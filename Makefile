@@ -18,6 +18,7 @@ up: # Разворачивание и запуск
 	@echo 'Подключение craftable'
 	make craft
 	make migrate
+	make seed
 	@echo 'Проект собран'
 	@echo 'Основное приложение: http://localhost:80/'
 	@echo 'Админка: http://localhost:8010/admin'
