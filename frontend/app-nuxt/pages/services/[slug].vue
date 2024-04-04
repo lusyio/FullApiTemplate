@@ -12,12 +12,7 @@
             </div>
             <h1 class="preview-screen--info-title">{{ service.pageTitle }}</h1>
             <p class="preview-screen--info-text">{{ service.pageDescription }}</p>
-            <button class="preview-screen--info-button">
-              <span>Запросить расчет испытаний</span>
-              <picture>
-                <img src="/images/icons/arrow-45deg.svg" alt="Запросить расчет испытаний"/>
-              </picture>
-            </button>
+            <ButtonMakeRequestToOrder text="Запросить рассчет испытаний" image="/images/icons/arrow-45deg.svg"></ButtonMakeRequestToOrder>
           </div>
           <picture class="preview-screen--pipes-picture">
             <img
@@ -49,8 +44,10 @@
 
 <script>
 import axios from 'axios';
+import ButtonMakeRequestToOrder from "../../components/elements/ButtonMakeRequestToOrder.vue";
 
 export default {
+  components: {ButtonMakeRequestToOrder},
   data() {
     return {
       service: null,
