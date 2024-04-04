@@ -11,12 +11,7 @@
         <p class="consultation-screen--content-right-text">
           Оставьте заявку, и наш менеджер свяжется с Вами в течение дня
         </p>
-        <button class="consultation-screen--content-right-button">
-          <span>Получить консультацию и узнать стоимость</span>
-          <picture>
-            <img src="/public/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
-          </picture>
-        </button>
+        <ButtonMakeRequestToOrder text="Получить консультацию и узнать стоимость" image="/images/icons/arrow-45deg.svg" :isColorWhite="true"></ButtonMakeRequestToOrder>
       </div>
     </div>
   </div>
@@ -24,4 +19,10 @@
 
 <script>
 
+import {defineComponent} from "vue";
+import ButtonMakeRequestToOrder from "../elements/ButtonMakeRequestToOrder.vue";
+
+export default defineComponent({
+  components: {ButtonMakeRequestToOrder}
+})
 </script>

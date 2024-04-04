@@ -4,12 +4,7 @@
       <h1 class="welcome-screen-title">Строительная лаборатория</h1>
       <div class="welcome-screen-right">
         <p class="welcome-screen-right-text">Испытания всех строительных материалов</p>
-        <button class="welcome-screen-right-button">
-          <span>Запросить расчет испытаний</span>
-          <picture>
-            <img src="/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
-          </picture>
-        </button>
+        <ButtonMakeRequestToOrder text="Запросить расчет испытаний" image="/images/icons/arrow-45deg.svg"></ButtonMakeRequestToOrder>
       </div>
     </div>
   </div>
@@ -17,4 +12,10 @@
 
 <script>
 
+import {defineComponent} from "vue";
+import ButtonMakeRequestToOrder from "../elements/ButtonMakeRequestToOrder.vue";
+
+export default defineComponent({
+  components: {ButtonMakeRequestToOrder}
+})
 </script>

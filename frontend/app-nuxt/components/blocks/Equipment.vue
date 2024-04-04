@@ -7,14 +7,15 @@
           <h2 class="title">Используем современное оборудование</h2>
         </div>
         <nav class="equipment-screen--head-menu">
-          <button
+          <ButtonMakeRequestToOrder
               v-for="(category, index) in categories"
               :key="index"
-              :class="['equipment-screen--head-menu-button', { 'equipment-screen--head-menu-button-active': selectedCategory === category }]"
               @click="selectCategory(category)"
-          >
-            {{ category }}
-          </button>
+              :text="category"
+              :class="[{ 'make-request-order--button-active': selectedCategory === category }]"
+              is-color-white="true"
+              :is-size-little="true"
+          />
         </nav>
       </div>
       <div class="equipment-screen--items">
@@ -36,7 +37,10 @@
 </template>
 
 <script>
+import ButtonMakeRequestToOrder from "../elements/ButtonMakeRequestToOrder.vue";
+
 export default {
+  components: {ButtonMakeRequestToOrder},
   data() {
     return {
       selectedCategory: null,

@@ -20,6 +20,7 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
+
 .button-with-icon-not-main {
   background: rgba(0, 0, 0, 0.1);
   font-family: var(--font3);
@@ -28,4 +29,53 @@
 
 .button-with-icon:hover {
   background: rgba(255, 255, 255, .2);
+}
+
+.make-request-order--button {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: rem(16px);
+  line-height: 87%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  border-radius: rem(8px);
+  background: #da4813;
+  border: none;
+  padding: rem(25) rem(25);
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background: #dd6c43;
+  }
+
+  picture img {
+    position: absolute;
+    bottom: rem(8px);
+    right: rem(8px);
+    width: rem(16px);
+    filter: invert(1);
+  }
+}
+
+.make-request-order--button-little {
+  padding: rem(16) rem(32);
+}
+
+.make-request-order--button-white {
+  background: #fff;
+  color: #151515;
+}
+
+.make-request-order--button-white:hover {
+  background: #e0c8c8;
+}
+
+.make-request-order--button-active {
+  background-color: #e0491f;
+  color: #fff;
+  &:hover {
+    background: #dd6c43;
+
+  }
 }

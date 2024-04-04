@@ -41,7 +41,7 @@
       <BlocksContacts :contacts="appData.contacts"></BlocksContacts>
     </div>
   </div>
-   <div class="website-main--outer-loading" v-else>
+  <div class="website-main--outer-loading" v-else>
     <p>LOADING...</p>
   </div>
   <Footer :footer="appData.footer" v-if="appData.isReady"/>

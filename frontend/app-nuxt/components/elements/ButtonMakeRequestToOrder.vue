@@ -1,14 +1,10 @@
 <template>
-  <component :is="tagName" :to="route" :class="['button-with-icon', {'button-with-icon-not-main': !isMain }]">
-    {{ text }}
-    <img v-if="image" :src="image" alt=""/>
-  </component>
-  <button class="welcome-screen-right-button">
-    <span>Запросить расчет испытаний</span>
-    <picture>
-      <img src="/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
+  <component :is="tagName" :to="route" :class="['make-request-order--button', {'make-request-order--button-white': isColorWhite}, {'make-request-order--button-little': isSizeLittle}]">
+    <span>{{ text }}</span>
+    <picture v-if="image">
+      <img :src="image" :alt="text"/>
     </picture>
-  </button>
+  </component>
 </template>
 
 <script>
@@ -16,7 +12,7 @@ export default {
   props: {
     image: {
       type: String,
-      required: true
+      default: null
     },
     text: {
       type: String,
@@ -26,9 +22,13 @@ export default {
       type: String,
       default: null
     },
-    isMain: {
+    isColorWhite: {
       type: Boolean,
-      required: true
+      default: false
+    },
+    isSizeLittle: {
+      type: Boolean,
+      default: false
     },
   },
   computed: {

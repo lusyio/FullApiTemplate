@@ -296,36 +296,6 @@
   color: #fff;
 }
 
-.consultation-screen--content-right-button {
-  background: #fff;
-  border-radius: rem(8px);
-  width: rem(390px);
-  padding: rem(8px);
-  height: rem(64px);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.consultation-screen--content-right-button span {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: rem(16px);
-  line-height: 87%;
-  letter-spacing: -0.03em;
-  color: #151515;
-}
-
-.consultation-screen--content-right-button img {
-  position: absolute;
-  bottom: rem(8px);
-  right: rem(8px);
-  width: rem(16px);
-}
-
 //howWeWork
 .howWeWork-screen--outer {
   width: 100%;
@@ -477,29 +447,7 @@
   color: #fff;
 }
 
-.welcome-screen-right-button {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: rem(16px);
-  line-height: 87%;
-  letter-spacing: -0.03em;
-  color: #fff;
-  border-radius: rem(8px);
-  background: #da4813;
-  border: none;
-  width: rem(284px);
-  padding: rem(12px);
-  height: rem(64px);
-  position: relative;
 
-  picture img {
-    position: absolute;
-    bottom: rem(8px);
-    right: rem(8px);
-    width: rem(16px);
-    filter: invert(1);
-  }
-}
 
 
 ///////////////////////
@@ -559,25 +507,6 @@
 .equipment-screen--head-menu {
   display: flex;
   gap: rem(6px);
-}
-
-.equipment-screen--head-menu-button {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: rem(8px);
-  padding: rem(16px) rem(32px);
-  background-color: #fff;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: rem(16px);
-  line-height: 100%;
-  letter-spacing: -0.03em;
-  color: #454b48;
-  cursor: pointer;
-}
-
-.equipment-screen--head-menu-button-active {
-  background-color: #e0491f;
-  color: #fff;
 }
 
 .equipment-screen--items {
@@ -721,29 +650,6 @@
   align-items: flex-end;
 }
 
-.services-screen--head-button {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: rem(16px);
-  line-height: 87%;
-  letter-spacing: -0.03em;
-  color: #fff;
-  border-radius: rem(8px);
-  background: #da4813;
-  width: rem(274px);
-  height: rem(64px);
-  border: none;
-  padding: rem(20px);
-  position: relative;
-
-  img {
-    position: absolute;
-    bottom: rem(8px);
-    right: rem(8px);
-    width: rem(16px);
-    filter: invert(1);
-  }
-}
 
 .services-screen--head-titles {
   display: flex;
@@ -981,9 +887,7 @@
   .consultation-screen--content-right {
     gap: rem(80px);
   }
-  .consultation-screen--content-right-button {
-    width: 100%;
-  }
+
   .consultation-screen--content-left-text {
     font-size: rem(32px);
   }

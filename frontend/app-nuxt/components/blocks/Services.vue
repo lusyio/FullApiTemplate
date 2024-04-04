@@ -6,12 +6,7 @@
           <h3 class="subtitle">Услуги</h3>
           <h2 class="title">Испытываем, сопровождаем и контролируем все этапы строительства</h2>
         </div>
-        <button class="services-screen--head-button" @click="requestCalculation">
-          <span>Запросить расчет испытаний</span>
-          <picture>
-            <img src="/images/icons/arrow-45deg.svg" alt="Запросить расчет испытаний"/>
-          </picture>
-        </button>
+        <ButtonMakeRequestToOrder @click="requestCalculation" text="Запросить расчет испытаний" image="/images/icons/arrow-45deg.svg"></ButtonMakeRequestToOrder>
       </div>
       <div class="services-screen--items">
         <nuxt-link
@@ -30,8 +25,10 @@
 
 <script>
 import axios from 'axios';
+import ButtonMakeRequestToOrder from "../elements/ButtonMakeRequestToOrder.vue";
 
 export default {
+  components: {ButtonMakeRequestToOrder},
   props: {
     services: {
       type: Array,

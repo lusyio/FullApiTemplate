@@ -10,15 +10,18 @@
           <span class="page-footer--feedback-phone">{{footer.phone}}</span>
           <nuxt-link to="#" class="page-footer--feedback-make-order-link">Оставить зявку</nuxt-link>
         </p>
-        <button class="page-footer--feedback-button">Перезвонить мне</button>
+        <ButtonMakeRequestToOrder text="Перезвонить мне" :is-size-little="true"></ButtonMakeRequestToOrder>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
+import ButtonMakeRequestToOrder from "./elements/ButtonMakeRequestToOrder.vue";
+
 export default {
   name: 'Footer',
+  components: {ButtonMakeRequestToOrder},
   props: {
     footer: {
       type: Object,
