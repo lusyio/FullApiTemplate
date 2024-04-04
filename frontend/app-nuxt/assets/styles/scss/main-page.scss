@@ -794,7 +794,10 @@
   }
 }
 
-.services-screen--items-item:nth-child(5n+5), .services-screen--items-item:nth-child(6n+6) {
+.services-screen--items-item:nth-child(5),
+.services-screen--items-item:nth-child(6),
+.services-screen--items-item:nth-child(11),
+.services-screen--items-item:nth-child(12) {
   position: relative;
   width: rem(615);
 }
