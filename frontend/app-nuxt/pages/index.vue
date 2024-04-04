@@ -1,6 +1,6 @@
 <template>
-  <Header :isMain="true"/>
-  <div class="website-main--outer">
+  <Header v-if="isReady" :isMain="true"/>
+  <div class="website-main--outer" v-if="isReady">
     <div class="website-main--inner">
       <div class="welcome-screen--outer">
         <div class="welcome-screen--inner">
@@ -18,7 +18,7 @@
       </div>
       <BlocksExperts v-if="advantages && experts" :isMain="true" :experts="experts" :advantages="advantages"></BlocksExperts>
       <BlocksServices :services="services"></BlocksServices>
-      <BlocksEquipment></BlocksEquipment>
+      <BlocksEquipment v-if="equipment" :equipment="equipment"></BlocksEquipment>
       <BlocksHowWeWork></BlocksHowWeWork>
       <BlocksConsultation></BlocksConsultation>
       <BlocksCertificates v-if="certificates" :certificates="certificates"></BlocksCertificates>
@@ -26,7 +26,10 @@
 
     </div>
   </div>
-  <Footer/>
+  <div class="website-main--outer-loading" v-else>
+    <p>LOADING...</p>
+  </div>
+  <Footer v-if="isReady"/>
 </template>
 
 <script>
@@ -52,6 +55,8 @@ export default {
       certificates: null,
       services: null,
       experts: null,
+      equipment: null,
+      isReady: false,
     }
   },
   async mounted() {
@@ -63,6 +68,8 @@ export default {
         this.certificates = resp.data.blocks.Certificates;
         this.services = resp.data.blocks.Services;
         this.experts = resp.data.blocks.Experts
+        this.equipment = resp.data.blocks.Equipment
+        this.isReady = true
       }
     } catch (error) {
       console.error('Ошибка при отправке запроса:', error);

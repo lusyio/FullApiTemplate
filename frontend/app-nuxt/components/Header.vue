@@ -38,8 +38,8 @@ import ButtonWithIcon from "./elements/ButtonWithIcon.vue";
 export default {
   props: {
     isMain: {
-      type: Boolean, // Укажите тип данных для isMain
-      required: true // Убедитесь, что это обязательный параметр
+      type: Boolean,
+      required: true
     },
   },
   name: 'Header',

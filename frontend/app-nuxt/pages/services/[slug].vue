@@ -1,6 +1,6 @@
 <template>
-  <Header :isMain="false"/>
-  <div class="website-main--outer">
+  <Header v-if="isReady" :isMain="false"/>
+  <div class="website-main--outer" v-if="isReady">
     <div class="website-main--inner">
       <div v-if="service" class="preview-screen--outer">
         <div class="preview-screen--inner">
@@ -34,14 +34,17 @@
         </div>
       </div>
       <BlocksExperts v-if="experts" :isMain="false" :experts="experts"></BlocksExperts>
+      <BlocksEquipment v-if="equipment" :equipment="equipment"></BlocksEquipment>
+      <BlocksHowWeWork></BlocksHowWeWork>
+      <BlocksConsultation></BlocksConsultation>
+      <BlocksCertificates :certificates="certificates"></BlocksCertificates>
+      <BlocksContacts></BlocksContacts>
     </div>
   </div>
-  <BlocksEquipment></BlocksEquipment>
-  <BlocksHowWeWork></BlocksHowWeWork>
-  <BlocksConsultation></BlocksConsultation>
-  <BlocksCertificates :certificates="certificates"></BlocksCertificates>
-  <BlocksContacts></BlocksContacts>
-  <Footer/>
+   <div class="website-main--outer-loading" v-else>
+    <p>LOADING...</p>
+  </div>
+  <Footer v-if="isReady"/>
 </template>
 
 <script>
@@ -55,6 +58,8 @@ export default {
       certificates: null,
       services: null,
       experts: null,
+      equipment: null,
+      isReady: false,
     }
   },
   async mounted() {
@@ -76,6 +81,8 @@ export default {
         this.certificates = blocksResp.data.blocks.Certificates;
         this.services = blocksResp.data.blocks.Services;
         this.experts = blocksResp.data.blocks.Experts;
+        this.equipment = blocksResp.data.blocks.Equipment
+        this.isReady = true
       } else {
         this.$router.push('/');
       }

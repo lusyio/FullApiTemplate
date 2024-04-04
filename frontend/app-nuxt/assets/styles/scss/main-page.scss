@@ -583,7 +583,8 @@
 .equipment-screen--items {
   display: flex;
   gap: rem(30px);
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .equipment--items-item {

@@ -113,6 +113,84 @@ class DatabaseSeeder extends Seeder
         $block->content = $experts['content'];
         $block->save();
 
+        $equipment = [
+            'name' => 'Оборудование',
+            'key' => 'Equipment',
+            'content' => json_encode([
+                [
+                    'title' => 'Пресс испытательный Matest',
+                    'category' => 'Бетон',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Пресс испытательный Matest',
+                    'category' => 'Бетон',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Пресс испытательный Matest',
+                    'category' => 'Бетон',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Пресс испытательный Matest',
+                    'category' => 'Бетон',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для бетонной смеси 1',
+                    'category' => 'Бетонная смесь',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для бетонной смеси 2',
+                    'category' => 'Бетонная смесь',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для бетонной смеси 3',
+                    'category' => 'Бетонная смесь',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для бетонной смеси 4',
+                    'category' => 'Бетонная смесь',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для раствора 1',
+                    'category' => 'Раствор',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для раствора 2',
+                    'category' => 'Раствор',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для раствора 3',
+                    'category' => 'Раствор',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для раствора 4',
+                    'category' => 'Раствор',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для щебня 1',
+                    'category' => 'Щебень',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для щебня 2',
+                    'category' => 'Щебень',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для щебня 3',
+                    'category' => 'Щебень',
+                    'image' => '/images/press-matest.jpg'
+                ], [
+                    'title' => 'Оборудование для щебня 4',
+                    'category' => 'Щебень',
+                    'image' => '/images/press-matest.jpg'
+                ],
+
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $equipment['name'];
+        $block->key = $equipment['key'];
+        $block->content = $equipment['content'];
+        $block->save();
+
         $services = [
             [
                 'title' => 'Сопровождение объектов строительства',
