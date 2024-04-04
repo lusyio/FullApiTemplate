@@ -26,6 +26,8 @@ export default {
         footer: null,
         howWeWork: null,
         contacts: null,
+        welcome: null,
+        consultation: null,
         isReady: false,
       }
     }
@@ -44,6 +46,8 @@ export default {
         this.appData.footer = resp.data.blocks.Footer;
         this.appData.contacts = resp.data.blocks.Contacts;
         this.appData.howWeWork = resp.data.blocks.HowWeWork;
+        this.appData.consultation = resp.data.blocks.Consultation;
+        this.appData.welcome = resp.data.blocks.Welcome;
         this.appData.isReady = true;
       }
     } catch (error) {

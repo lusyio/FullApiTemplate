@@ -29,7 +29,6 @@ class DatabaseSeeder extends Seeder
         $page->save();
 
         $advantages = [
-
             'name' => 'Преимущества',
             'key' => 'Advantages',
             'content' => json_encode([
@@ -67,6 +66,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Сертификаты',
             'key' => 'Certificates',
             'content' => json_encode([
+                'subtitle' => 'Сертификаты',
+                'title' => 'Сертификаты лаборатории',
                 [
                     'title' => 'Документ 1',
                 ],
@@ -92,7 +93,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Эксперты',
             'key' => 'Experts',
             'content' => json_encode([
-
                 'title' => 'Эксперты в исследовании строительных материалов',
                 'director_job' => 'Генеральный директор',
                 'director_name' => 'О.В. Гадалова',
@@ -104,7 +104,6 @@ class DatabaseSeeder extends Seeder
               неразрушающими методами при обследовании и строительстве', 'Наша лаборатория разрушающего контроля осуществляет свою деятельность в соответствии с
               законодательством в порядке предусмотренным ГОСТ 17025-2019'
                 ],
-
             ], JSON_UNESCAPED_UNICODE)
         ];
         $block = new Block();
@@ -117,6 +116,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Оборудование',
             'key' => 'Equipment',
             'content' => json_encode([
+                'subtitle' => 'Оборудование',
+                'title' => 'Используем современное оборудование',
                 [
                     'title' => 'Пресс испытательный Matest',
                     'category' => 'Бетон',
@@ -195,6 +196,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Контакты',
             'key' => 'Contacts',
             'content' => json_encode([
+                'title' => 'Контакты',
+                'email_label' => 'Электронная почта',
+                'phone_label' => 'Номер телефона',
+                'address_label' => 'Адрес',
                 'email' => 'info@lsk-stroyexpert.ru',
                 'phone' => '+7 (925) 577-01-90',
                 'address' => ' 794 Mcallister St San Francisco, 94102',
@@ -230,6 +235,8 @@ class DatabaseSeeder extends Seeder
                     ]
                 ],
                 'phone' => '+7 (925) 577-01-90',
+                'text_button_1' => 'Перезвоните мне',
+                'text_login_button_2' => 'Личный кабинет',
             ], JSON_UNESCAPED_UNICODE)
         ];
         $block = new Block();
@@ -245,6 +252,8 @@ class DatabaseSeeder extends Seeder
                 'logo' => '/images/logo.svg',
                 'copyrights' => 'Copyright © 2025 BRIX Agency | All Rights Reserved',
                 'phone' => '+7 (925) 577-01-90',
+                'text_button_1' => 'Перезвоните мне',
+                'text_button_2' => 'Оставить заявку',
             ], JSON_UNESCAPED_UNICODE)
         ];
         $block = new Block();
@@ -257,6 +266,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Как мы работаем',
             'key' => 'HowWeWork',
             'content' => json_encode([
+                'title' => 'Как мы работаем',
                 'steps' => [
                     [
                         'image' => '/images/icons/send-order.svg',
@@ -287,96 +297,119 @@ class DatabaseSeeder extends Seeder
         $block->content = $howWeWork['content'];
         $block->save();
 
-        $services = [
-            [
+        $consultation = [
+            'name' => 'Консультация',
+            'key' => 'Consultation',
+            'content' => json_encode([
+                'title' => 'Стройэксперт',
+                'text_left' => 'Получите консультацию экспертов по необходимым испытаниям',
+                'text_right' => 'Оставьте заявку, и наш менеджер свяжется с Вами в течение дня',
+                'text_button' => 'Получить косультацию и узнать стоимость',
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $consultation['name'];
+        $block->key = $consultation['key'];
+        $block->content = $consultation['content'];
+        $block->save();
+
+        $welcome = [
+            'name' => 'Welcome',
+            'key' => 'Welcome',
+            'content' => json_encode([
+                'title' => 'Строительная лаборатория',
+                'text_right' => 'Испытания всех строительных материалов',
+                'text_button' => 'Запросить рассчет испытаний',
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $welcome['name'];
+        $block->key = $welcome['key'];
+        $block->content = $welcome['content'];
+        $block->save();
+
+        $servicesItems = [
+            'soprovozhdenie-obuektov-stroitelstva' => [
                 'title' => 'Сопровождение объектов строительства',
-                'url' => 'soprovozhdenie-obuektov-stroitelstva',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/pipes.png',
-                    'service_image_mobile' => '/images/pipes--mobile.png',
-                ]),
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/pipes.png',
+                'description' => 'Испытания всех строительных материалов',
+                'text_button' => 'Запросить рассчет испытаний',
+                'service_image_mobile' => '/images/pipes--mobile.png',
             ],
-            [
-                'title' => 'Испытания бетона, кострукций и изделий',
-                'url' => 'ispytaniya-betona-konstruktsiy-i-izdeliy',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+            'ispytaniya-betona-konstruktsiy-i-izdeliy' => [
+                'title' => 'Испытания бетона, конструкций и изделий',
+                'text_button' => 'Запросить рассчет испытаний',
+                'service_image_preview' => '/images/service.jpg',
+                'description' => 'Испытания всех строительных материалов',
+                'service_image' => '/images/service.jpg',
             ],
-            [
+            'ispytanie-gruntov' => [
                 'title' => 'Испытание грунтов',
-                'url' => 'ispytanie-gruntov',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/service.jpg',
+                'description' => 'Испытания всех строительных материалов',
+                'text_button' => 'Запросить рассчет испытаний',
             ],
-            [
+            'opredelenie-kharakteristik-betona' => [
+                'text_button' => 'Запросить рассчет испытаний',
+                'description' => 'Испытания всех строительных материалов',
                 'title' => 'Определение характеристик бетона',
-                'url' => 'opredelenie-kharakteristik-betona',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/service.jpg',
             ],
-            [
+            'ispytanie-stroitelnykh-materialov' => [
+                'description' => 'Испытания всех строительных материалов',
                 'title' => 'Испытание строительных материалов',
-                'url' => 'ispytanie-stroitelnykh-materialov',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'service_image_preview' => '/images/service.jpg',
+                'text_button' => 'Запросить рассчет испытаний',
+                'service_image' => '/images/service.jpg',
             ],
-            [
+            'podbor-retseptury-betona-i-rastvorov' => [
+                'description' => 'Испытания всех строительных материалов',
                 'title' => 'Подбор рецептуры бетона и растворов',
-                'url' => 'podbor-retseptury-betona-i-rastvorov',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'text_button' => 'Запросить рассчет испытаний',
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/service.jpg',
             ],
-            [
+            'nerazrushayushchiy-kontrol-betona' => [
+                'description' => 'Испытания всех строительных материалов',
                 'title' => 'Неразрушающий контроль бетона',
-                'url' => 'nerazrushayushchiy-kontrol-betona',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'text_button' => 'Запросить рассчет испытаний',
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/service.jpg',
             ],
-            [
+            'ispytanie-lakokrasochnogo-pokrytiya' => [
+                'description' => 'Испытания всех строительных материалов',
+                'text_button' => 'Запросить рассчет испытаний',
                 'title' => 'Испытание лакокрасочного покрытия',
-                'url' => 'ispytanie-lakokrasochnogo-pokrytiya',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/service.jpg',
             ],
-            [
+            'opredelenie-tolshchiny-pokrytiy' => [
+                'description' => 'Испытания всех строительных материалов',
+                'text_button' => 'Запросить рассчет испытаний',
                 'title' => 'Определение толщины покрытий',
-                'url' => 'opredelenie-tolshchiny-pokrytiy',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
-            ],
-            [
-                'title' => 'Определение толщины покрытий',
-                'url' => 'opredelenie-tolshchiny-pokrytiy',
-                'content' => json_encode([
-                    'service_image_preview' => '/images/service.jpg',
-                    'service_image' => '/images/service.jpg',
-                ]),
+                'service_image_preview' => '/images/service.jpg',
+                'service_image' => '/images/service.jpg',
             ],
         ];
 
-        foreach ($services as $data) {
-            $service = new Service();
-            $service->title = $data['title'];
-            $service->url = $data['url'];
-            $service->content = $data['content'];
-            $service->save();
-        }
+        $servicesBlock = [
+            'name' => 'Услуги',
+            'key' => 'Services',
+            'content' => json_encode([
+                'subtitle' => 'Услуги',
+                'title' => 'Испытываем, сопровождаем и контролируем все этапы строительства',
+                'text_button' => 'Запросить рассчет испытаний',
+                'services_items' => $servicesItems,
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+
+        $block = new Block();
+        $block->name = $servicesBlock['name'];
+        $block->key = $servicesBlock['key'];
+        $block->content = $servicesBlock['content'];
+        $block->save();
     }
 }

@@ -37,23 +37,10 @@ class PageController extends Controller
     public function getAllBlocks(Request $request)
     {
         $blocks = Block::all();
-        $services = Service::all();
         $resp = new ProtocolResp();
 
         if ($blocks->isNotEmpty()) {
             $decodedBlocks = [];
-
-            $servicesArray = [];
-            foreach ($services as $service) {
-                $serviceData = [
-                    'title' => $service->title,
-                    'content' => json_decode($service->content, true), // Получаем URL из контента сервиса
-                    'url' => $service->url,
-                ];
-                $servicesArray[] = $serviceData;
-            }
-
-            $decodedBlocks['Services'] = $servicesArray;
 
             foreach ($blocks as $block) {
                 $decodedContent = json_decode($block->content, true);

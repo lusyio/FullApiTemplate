@@ -83,6 +83,9 @@ export default {
       type: Array,
       required: true
     }
+  },
+  mounted() {
+    console.log(this.certificates);
   }
 }
 </script>
