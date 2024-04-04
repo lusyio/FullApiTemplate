@@ -54,11 +54,11 @@ export default {
   },
   computed: {
     categories() {
-      let equipmentArray = Object.values(this.equipment);
+      let equipmentArray = Object.values(this.equipment.equipment_items);
       return Array.from(new Set(equipmentArray.map(item => item.category)));
     },
     filteredItems() {
-      let equipmentArray = Object.values(this.equipment);
+      let equipmentArray = Object.values(this.equipment.equipment_items);
       return this.selectedCategory ? equipmentArray.filter(item => item.category === this.selectedCategory) : this.equipment;
     }
   },

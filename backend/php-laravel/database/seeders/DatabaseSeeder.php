@@ -68,18 +68,20 @@ class DatabaseSeeder extends Seeder
             'content' => json_encode([
                 'subtitle' => 'Сертификаты',
                 'title' => 'Сертификаты лаборатории',
-                [
-                    'title' => 'Документ 1',
-                ],
-                [
-                    'title' => 'Документ 2',
-                ],
-                [
-                    'title' => 'Документ 3',
-                ],
-                [
-                    'title' => 'Документ 4',
-                ],
+                'certs' => [
+                    [
+                        'title' => 'Документ 1',
+                    ],
+                    [
+                        'title' => 'Документ 2',
+                    ],
+                    [
+                        'title' => 'Документ 3',
+                    ],
+                    [
+                        'title' => 'Документ 4',
+                    ],
+                ]
             ], JSON_UNESCAPED_UNICODE)
         ];
 
@@ -118,7 +120,7 @@ class DatabaseSeeder extends Seeder
             'content' => json_encode([
                 'subtitle' => 'Оборудование',
                 'title' => 'Используем современное оборудование',
-                [
+                'equipment_items' => [[
                     'title' => 'Пресс испытательный Matest',
                     'category' => 'Бетон',
                     'image' => '/images/press-matest.jpg'
@@ -182,6 +184,7 @@ class DatabaseSeeder extends Seeder
                     'title' => 'Оборудование для щебня 4',
                     'category' => 'Щебень',
                     'image' => '/images/press-matest.jpg'
+                ],
                 ],
 
             ], JSON_UNESCAPED_UNICODE)
