@@ -30,10 +30,10 @@
       </div>
       <BlocksExperts v-if="appData.experts" :isMain="false" :experts="appData.experts"></BlocksExperts>
       <BlocksEquipment v-if="appData.equipment" :equipment="appData.equipment"></BlocksEquipment>
-      <BlocksHowWeWork></BlocksHowWeWork>
-      <BlocksConsultation></BlocksConsultation>
-      <BlocksCertificates :certificates="appData.certificates"></BlocksCertificates>
-      <BlocksContacts :contacts="appData.contacts"></BlocksContacts>
+      <BlocksHowWeWork v-if="appData.howWeWork" :howWeWork="appData.howWeWork"></BlocksHowWeWork>
+      <BlocksConsultation v-if="appData.consultation" :consultation="appData.consultation"></BlocksConsultation>
+      <BlocksCertificates v-if="appData.certificates" :certificates="appData.certificates"></BlocksCertificates>
+      <BlocksContacts v-if="appData.contacts" :contacts="appData.contacts"></BlocksContacts>
     </div>
   </div>
   <div class="website-main--outer-loading" v-else>

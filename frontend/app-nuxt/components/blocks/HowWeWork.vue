@@ -1,38 +1,14 @@
 <template>
-  <div class="howWeWork-screen--outer">
+  <div v-if="howWeWork" class="howWeWork-screen--outer">
     <div class="howWeWork-screen--inner">
-      <h2 class="howWeWork-screen--title">Как мы работаем</h2>
+      <h2 class="howWeWork-screen--title">{{ howWeWork.title }}</h2>
       <div class="howWeWork-screen--content">
         <ul class="howWeWork-screen--content-items">
-          <li class="howWeWork-screen--content-items-item">
+          <li v-for="(item, index) in howWeWork.steps" :key="index" class="howWeWork-screen--content-items-item">
             <picture>
-              <img src="/public/images/icons/send-order.svg" alt="Оставляете заявку"/>
+              <img :src="item.image" :alt="item.text"/>
             </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Оставляете заявку</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/public/images/icons/send-message.svg" alt="Оставляете заявку"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Оставляете заявку</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/public/images/icons/going-to-object.svg" alt="Выезжаем на объект"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Выезжаем на объект</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/public/images/icons/get-document.svg" alt="Выдаем заключение"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Выдаем заключение</h6>
-          </li>
-          <li class="howWeWork-screen--content-items-item">
-            <picture>
-              <img src="/public/images/icons/save-document.svg" alt="Храним документации в личном кабинете"/>
-            </picture>
-            <h6 class="howWeWork-screen--content-items-item-title">Храним документации в личном кабинете</h6>
+            <h6 class="howWeWork-screen--content-items-item-title">{{ item.text }}</h6>
           </li>
         </ul>
       </div>
@@ -42,6 +18,11 @@
 
 <script>
 export default {
-
+  props: {
+    howWeWork: {
+      type: Object, // Изменен тип на Object, так как ваше свойство howWeWork является объектом, а не массивом
+      required: true
+    }
+  }
 }
 </script>

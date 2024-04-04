@@ -2,14 +2,14 @@
   <Header :header="appData.header" v-if="appData.isReady" :isMain="true"/>
   <div class="website-main--outer" v-if="appData.isReady">
     <div class="website-main--inner">
-      <BlocksWelcome></BlocksWelcome>
+      <BlocksWelcome v-if="appData.welcome" :welcome="appData.welcome"></BlocksWelcome>
       <BlocksExperts v-if="appData.advantages && appData.experts" :isMain="true" :experts="appData.experts" :advantages="appData.advantages"></BlocksExperts>
       <BlocksServices :services="appData.services"></BlocksServices>
       <BlocksEquipment v-if="appData.equipment" :equipment="appData.equipment"></BlocksEquipment>
-      <BlocksHowWeWork></BlocksHowWeWork>
-      <BlocksConsultation></BlocksConsultation>
+      <BlocksHowWeWork v-if="appData.howWeWork" :howWeWork="appData.howWeWork"></BlocksHowWeWork>
+      <BlocksConsultation v-if="appData.consultation" :consultation="appData.consultation"></BlocksConsultation>
       <BlocksCertificates v-if="appData.certificates" :certificates="appData.certificates"></BlocksCertificates>
-      <BlocksContacts :contacts="appData.contacts"></BlocksContacts>
+      <BlocksContacts v-if="appData.contacts" :contacts="appData.contacts"></BlocksContacts>
     </div>
   </div>
   <div class="website-main--outer-loading" v-else>

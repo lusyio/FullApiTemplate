@@ -280,7 +280,7 @@ class DatabaseSeeder extends Seeder
                         'text' => 'Оставляете заявку',
                     ],
                     [
-                        'image' => '/images/icons/going-to-object',
+                        'image' => '/images/icons/going-to-object.svg',
                         'text' => 'Выезжаем на объект',
                     ],
                     [
