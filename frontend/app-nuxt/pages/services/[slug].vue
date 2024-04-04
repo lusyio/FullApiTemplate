@@ -125,7 +125,7 @@ export default {
   async mounted() {
     const slug = this.$route.params.slug;
     try {
-      const resp = await axios.get(`http://localhost:8000/api/services/${slug}`);
+      const resp = await axios.get(`http://localhost:8000/api/blocks/services/${slug}`);
       if (resp.data.result) {
         this.service = {
           pageTitle: resp.data.service.title,

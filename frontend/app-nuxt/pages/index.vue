@@ -16,12 +16,12 @@
           </div>
         </div>
       </div>
-      <BlocksExperts :isMain="true" :advantages="advantages"></BlocksExperts>
+      <BlocksExperts v-if="advantages" :isMain="true" :advantages="advantages"></BlocksExperts>
       <BlocksServices :services="services"></BlocksServices>
       <BlocksEquipment></BlocksEquipment>
       <BlocksHowWeWork></BlocksHowWeWork>
       <BlocksConsultation></BlocksConsultation>
-      <BlocksCertificates :certificates="certificates"></BlocksCertificates>
+      <BlocksCertificates v-if="certificates" :certificates="certificates"></BlocksCertificates>
       <BlocksContacts></BlocksContacts>
 
     </div>
@@ -30,8 +30,6 @@
 </template>
 
 <script>
-import Header from './../components/Header.vue'
-import Footer from './../components/Footer.vue'
 import axios from 'axios';
 
 export default {
@@ -50,42 +48,8 @@ export default {
   },
   data() {
     return {
-      advantages: [
-        {
-          title: 'Современное оборудование',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        },
-        {
-          title: 'Аккредитация "COBACK"',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        },
-        {
-          title: 'Работа 24/7',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        },
-        {
-          title: 'Актуальная нормативная база',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        }
-      ],
-      certificates: [
-        {
-          'title': 'Документ 1'
-        },
-        {
-          'title': 'Документ 2'
-        },
-        {
-          'title': 'Документ 3'
-        },
-        {
-          'title': 'Документ 4'
-        }
-      ],
+      advantages: null,
+      certificates: null,
       services: [
         {
           'title': 'Сопровождение объектов строительства',
@@ -120,6 +84,18 @@ export default {
         }
       ],
     }
-  }
+  },
+  async mounted() {
+    try {
+      const resp = await axios.get(`http://localhost:8000/api/blocks`);
+      console.log(resp);
+      if (resp.data.result) {
+        this.advantages = resp.data.blocks.Advantages;
+        this.certificates = resp.data.blocks.Certificates;
+      }
+    } catch (error) {
+      console.error('Ошибка при отправке запроса:', error);
+    }
+  },
 }
 </script>
