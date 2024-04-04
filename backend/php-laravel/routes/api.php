@@ -18,12 +18,12 @@ use App\Http\Controllers\Api\PageController;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group([
-    'prefix' => 'page',
-    'as' => 'page.',
-], function () {
-    Route::post('get', [PageController::class, 'get'])->name('get');
-});
+//Route::group([
+//    'prefix' => 'page',
+//    'as' => 'page.',
+//], function () {
+//    Route::post('get', [PageController::class, 'get'])->name('get');
+//});
 
 Route::get('/blocks/services/{url}', [PageController::class, 'getServiceBlockByUrl']);
 Route::get('/blocks', [PageController::class, 'getAllBlocks']);

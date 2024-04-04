@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <BlocksExperts v-if="advantages" :isMain="true" :advantages="advantages"></BlocksExperts>
+      <BlocksExperts v-if="advantages && experts" :isMain="true" :experts="experts" :advantages="advantages"></BlocksExperts>
       <BlocksServices :services="services"></BlocksServices>
       <BlocksEquipment></BlocksEquipment>
       <BlocksHowWeWork></BlocksHowWeWork>
@@ -51,6 +51,7 @@ export default {
       advantages: null,
       certificates: null,
       services: null,
+      experts: null,
     }
   },
   async mounted() {
@@ -61,6 +62,7 @@ export default {
         this.advantages = resp.data.blocks.Advantages;
         this.certificates = resp.data.blocks.Certificates;
         this.services = resp.data.blocks.Services;
+        this.experts = resp.data.blocks.Experts
       }
     } catch (error) {
       console.error('Ошибка при отправке запроса:', error);

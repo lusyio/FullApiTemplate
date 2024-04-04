@@ -33,7 +33,7 @@
           </picture>
         </div>
       </div>
-      <BlocksExperts :isMain="false"></BlocksExperts>
+      <BlocksExperts v-if="experts" :isMain="false" :experts="experts"></BlocksExperts>
     </div>
   </div>
   <BlocksEquipment></BlocksEquipment>
@@ -51,89 +51,31 @@ export default {
   data() {
     return {
       service: null,
-      advantages: [
-        {
-          title: 'Современное оборудование',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        },
-        {
-          title: 'Аккредитация "COBACK"',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        },
-        {
-          title: 'Работа 24/7',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        },
-        {
-          title: 'Актуальная нормативная база',
-          text: 'Лаборатория укомплектована всем необходимым оборудованием и проходит своевременную поверку',
-          image: '/images/icons/advantage.svg'
-        }
-      ],
-      certificates: [
-        {
-          'title': 'Документ 1'
-        },
-        {
-          'title': 'Документ 2'
-        },
-        {
-          'title': 'Документ 3'
-        },
-        {
-          'title': 'Документ 4'
-        }
-      ],
-      services: [
-        {
-          'title': 'Сопровождение объектов строительства',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытания бетона, кострукций и изделий',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание грунтов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Определение характеристик бетона',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание строительных материалов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание строительных материалов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Подбор рецептуры бетона и растворов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Неразрушающий контроль бетона',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание лакокрасочного покрытия',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Определение толщины покрытий',
-          'image': '/images/service.jpg'
-        }
-      ],
+      advantages: null,
+      certificates: null,
+      services: null,
+      experts: null,
     }
   },
   async mounted() {
     const slug = this.$route.params.slug;
     try {
-      const resp = await axios.get(`http://localhost:8000/api/blocks/services/${slug}`);
-      if (resp.data.result) {
+      const [serviceResp, blocksResp] = await Promise.all([
+        axios.get(`http://localhost:8000/api/blocks/services/${slug}`),
+        axios.get(`http://localhost:8000/api/blocks`)
+      ]);
+
+      if (serviceResp.data.result && blocksResp.data.result) {
         this.service = {
-          pageTitle: resp.data.service.title,
-          pageDescription: resp.data.service.description,
-          serviceImage: resp.data.service.content.service_image,
-          serviceImageMobile: resp.data.service.content.service_image_mobile,
+          pageTitle: serviceResp.data.service.title,
+          pageDescription: serviceResp.data.service.description,
+          serviceImage: serviceResp.data.service.content.service_image,
+          serviceImageMobile: serviceResp.data.service.content.service_image_mobile,
         };
-        console.log(this.service);
+        this.advantages = blocksResp.data.blocks.Advantages;
+        this.certificates = blocksResp.data.blocks.Certificates;
+        this.services = blocksResp.data.blocks.Services;
+        this.experts = blocksResp.data.blocks.Experts;
       } else {
         this.$router.push('/');
       }
