@@ -37,3 +37,7 @@ craft: # сборка фротна. Js собирается на железе (�
 migrate: # провести миграции
 	docker exec -it craft-admin php artisan migrate
 	docker exec -it php-laravel-backend php artisan migrate
+
+seed:
+	docker exec -it php-laravel-backend php artisan migrate:refresh
+	docker exec -it php-laravel-backend php artisan db:seed
