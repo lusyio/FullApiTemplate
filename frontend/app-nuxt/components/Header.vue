@@ -7,18 +7,18 @@
           <img class="page-header--logo-img" src="/images/logo.svg" srcset="/images/logo@2x.svg 2x" alt="Лого"/>
         </nuxt-link>
         <nav class="page-header--nav-menu">
-          <ButtonWithIcon text="Каталог услуг" :image="'/images/icons/arrow-down.svg'"/>
-          <ButtonWithIcon text="Оборудование" :image="'/images/icons/arrow-down.svg'"/>
-          <ButtonWithIcon text="Сертификация" :image="'/images/icons/arrow-down.svg'"/>
-          <ButtonWithIcon text="Контакты" :image="'/images/icons/arrow-down.svg'"/>
+          <ButtonWithIcon :isMain="isMain" text="Каталог услуг" :image="isMain ? '/images/icons/arrow-down.svg' : '/images/icons/arrow-down-black.svg'"/>
+          <ButtonWithIcon :isMain="isMain" text="Оборудование" :image="isMain ? '/images/icons/arrow-down.svg' : '/images/icons/arrow-down-black.svg'"/>
+          <ButtonWithIcon :isMain="isMain" text="Сертификация" :image="isMain ? '/images/icons/arrow-down.svg' : '/images/icons/arrow-down-black.svg'"/>
+          <ButtonWithIcon :isMain="isMain" text="Контакты" :image="isMain ? '/images/icons/arrow-down.svg' : '/images/icons/arrow-down-black.svg'"/>
         </nav>
       </div>
       <div class="page-header--right">
         <div class="page-header--right-info">
-          <p class="page-header--right-info-phone">+7 (925) 577-01-90</p>
+          <p class="page-header--right-info-phone" :class="{ 'page-header--right-info-phone-not-main': !isMain }">+7 (925) 577-01-90</p>
           <p class="page-header--right-info-callMe">Перезвонить мне</p>
         </div>
-        <ButtonWithIcon route="/personal-cabinet" text="Личный кабинет" :image="'/images/icons/user.svg'"/>
+        <ButtonWithIcon :isMain="isMain" route="/personal-cabinet" text="Личный кабинет" :image="isMain ? '/images/icons/user.svg' : '/images/icons/user-black.svg'"/>
       </div>
       <div class="page-header--right-mobile">
         <button class="page-header--right-mobile-phone-button">
@@ -36,6 +36,12 @@
 import ButtonWithIcon from "./elements/ButtonWithIcon.vue";
 
 export default {
+  props: {
+    isMain: {
+      type: Boolean, // Укажите тип данных для isMain
+      required: true // Убедитесь, что это обязательный параметр
+    },
+  },
   name: 'Header',
   components: {
     ButtonWithIcon

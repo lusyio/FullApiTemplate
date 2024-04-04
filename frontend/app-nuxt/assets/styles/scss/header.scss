@@ -11,6 +11,7 @@
   max-width: rem(1400px);
 }
 
+
 .page-header--bgblock {
   display: block;
   width: 100%;
@@ -68,6 +69,15 @@
   color: #fefefe;
 }
 
+.page-header--right-info-phone-not-main {
+  font-family: var(--font3);
+  font-weight: 700;
+  font-size: rem(15);
+  line-height: 107%;
+  letter-spacing: -0.03em;
+  color: #000;
+}
+
 .page-header--right-info-callMe {
   font-family: var(--font3);
   font-weight: 400;
@@ -84,7 +94,7 @@
   height: rem(43px);
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .page-header--right {
     display: none;
   }

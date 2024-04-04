@@ -20,6 +20,11 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
+.button-with-icon-not-main {
+  background: rgba(0, 0, 0, 0.1);
+  font-family: var(--font3);
+  color: #000;
+}
 
 .button-with-icon:hover {
   background: rgba(255, 255, 255, .2);
