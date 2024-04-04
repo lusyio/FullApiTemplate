@@ -1,5 +1,5 @@
 <template>
-  <header class="page-header--outer">
+  <header :class="['page-header--outer', {'page-header--outer-main' : isMain}]">
     <div class="page-header--bgblock"></div>
     <div class="page-header--inner">
       <div class="page-header--left">
