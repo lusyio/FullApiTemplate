@@ -50,39 +50,7 @@ export default {
     return {
       advantages: null,
       certificates: null,
-      services: [
-        {
-          'title': 'Сопровождение объектов строительства',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытания бетона, кострукций и изделий',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание грунтов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Определение характеристик бетона',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание строительных материалов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание строительных материалов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Подбор рецептуры бетона и растворов',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Неразрушающий контроль бетона',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Испытание лакокрасочного покрытия',
-          'image': '/images/service.jpg'
-        }, {
-          'title': 'Определение толщины покрытий',
-          'image': '/images/service.jpg'
-        }
-      ],
+      services: null,
     }
   },
   async mounted() {
@@ -92,6 +60,7 @@ export default {
       if (resp.data.result) {
         this.advantages = resp.data.blocks.Advantages;
         this.certificates = resp.data.blocks.Certificates;
+        this.services = resp.data.blocks.Services;
       }
     } catch (error) {
       console.error('Ошибка при отправке запроса:', error);

@@ -92,6 +92,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Сопровождение объектов строительства',
                 'url' => 'soprovozhdenie-obuektov-stroitelstva',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/pipes.png',
                     'service_image_mobile' => '/images/pipes--mobile.png',
                 ]),
@@ -100,6 +101,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Испытания бетона, кострукций и изделий',
                 'url' => 'ispytaniya-betona-konstruktsiy-i-izdeliy',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -107,6 +109,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Испытание грунтов',
                 'url' => 'ispytanie-gruntov',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -114,6 +117,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Определение характеристик бетона',
                 'url' => 'opredelenie-kharakteristik-betona',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -121,6 +125,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Испытание строительных материалов',
                 'url' => 'ispytanie-stroitelnykh-materialov',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -128,6 +133,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Подбор рецептуры бетона и растворов',
                 'url' => 'podbor-retseptury-betona-i-rastvorov',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -135,6 +141,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Неразрушающий контроль бетона',
                 'url' => 'nerazrushayushchiy-kontrol-betona',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -142,6 +149,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Испытание лакокрасочного покрытия',
                 'url' => 'ispytanie-lakokrasochnogo-pokrytiya',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],
@@ -149,6 +157,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Определение толщины покрытий',
                 'url' => 'opredelenie-tolshchiny-pokrytiy',
                 'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',
                 ]),
             ],

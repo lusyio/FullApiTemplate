@@ -14,14 +14,15 @@
         </button>
       </div>
       <div class="services-screen--items">
-        <div
+        <nuxt-link
             v-for="(service, index) in services"
             :key="index"
             class="services-screen--items-item"
+            :to="`/services/${service.url}`"
         >
-          <img :src="service.image" :alt="service.title"/>
+          <img :src="service.content.service_image_preview" :alt="service.title"/>
           <div class="services-screen--items-item-title">{{ service.title }}</div>
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
