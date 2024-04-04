@@ -1,6 +1,6 @@
 <template>
-  <Header v-if="isReady" :isMain="false"/>
-  <div class="website-main--outer" v-if="isReady">
+  <Header :header="appData.header" v-if="appData.isReady" :isMain="false"/>
+  <div class="website-main--outer" v-if="appData.isReady">
     <div class="website-main--inner">
       <div v-if="service" class="preview-screen--outer">
         <div class="preview-screen--inner">
@@ -33,18 +33,18 @@
           </picture>
         </div>
       </div>
-      <BlocksExperts v-if="experts" :isMain="false" :experts="experts"></BlocksExperts>
-      <BlocksEquipment v-if="equipment" :equipment="equipment"></BlocksEquipment>
+      <BlocksExperts v-if="appData.experts" :isMain="false" :experts="appData.experts"></BlocksExperts>
+      <BlocksEquipment v-if="appData.equipment" :equipment="appData.equipment"></BlocksEquipment>
       <BlocksHowWeWork></BlocksHowWeWork>
       <BlocksConsultation></BlocksConsultation>
-      <BlocksCertificates :certificates="certificates"></BlocksCertificates>
-      <BlocksContacts></BlocksContacts>
+      <BlocksCertificates :certificates="appData.certificates"></BlocksCertificates>
+      <BlocksContacts :contacts="appData.contacts"></BlocksContacts>
     </div>
   </div>
    <div class="website-main--outer-loading" v-else>
     <p>LOADING...</p>
   </div>
-  <Footer v-if="isReady"/>
+  <Footer :footer="appData.footer" v-if="appData.isReady"/>
 </template>
 
 <script>
@@ -54,35 +54,20 @@ export default {
   data() {
     return {
       service: null,
-      advantages: null,
-      certificates: null,
-      services: null,
-      experts: null,
-      equipment: null,
-      isReady: false,
     }
   },
   async mounted() {
     const slug = this.$route.params.slug;
     try {
-      const [serviceResp, blocksResp] = await Promise.all([
-        axios.get(`http://localhost:8000/api/blocks/services/${slug}`),
-        axios.get(`http://localhost:8000/api/blocks`)
-      ]);
+      const serviceResp = await axios.get(`http://localhost:8000/api/blocks/services/${slug}`);
 
-      if (serviceResp.data.result && blocksResp.data.result) {
+      if (serviceResp.data.result) {
         this.service = {
           pageTitle: serviceResp.data.service.title,
           pageDescription: serviceResp.data.service.description,
           serviceImage: serviceResp.data.service.content.service_image,
           serviceImageMobile: serviceResp.data.service.content.service_image_mobile,
         };
-        this.advantages = blocksResp.data.blocks.Advantages;
-        this.certificates = blocksResp.data.blocks.Certificates;
-        this.services = blocksResp.data.blocks.Services;
-        this.experts = blocksResp.data.blocks.Experts;
-        this.equipment = blocksResp.data.blocks.Equipment
-        this.isReady = true
       } else {
         this.$router.push('/');
       }
@@ -90,6 +75,9 @@ export default {
       console.error('Ошибка при отправке запроса:', error);
     }
   },
+  props: {
+    appData: Object,
+  }
 }
 </script>
 

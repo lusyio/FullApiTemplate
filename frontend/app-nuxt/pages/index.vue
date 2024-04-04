@@ -1,35 +1,21 @@
 <template>
-  <Header v-if="isReady" :isMain="true"/>
-  <div class="website-main--outer" v-if="isReady">
+  <Header :header="appData.header" v-if="appData.isReady" :isMain="true"/>
+  <div class="website-main--outer" v-if="appData.isReady">
     <div class="website-main--inner">
-      <div class="welcome-screen--outer">
-        <div class="welcome-screen--inner">
-          <h1 class="welcome-screen-title">Строительная лаборатория</h1>
-          <div class="welcome-screen-right">
-            <p class="welcome-screen-right-text">Испытания всех строительных материалов</p>
-            <button class="welcome-screen-right-button">
-              <span>Запросить расчет испытаний</span>
-              <picture>
-                <img src="/images/icons/arrow-45deg.svg" alt="Оставить заявку"/>
-              </picture>
-            </button>
-          </div>
-        </div>
-      </div>
-      <BlocksExperts v-if="advantages && experts" :isMain="true" :experts="experts" :advantages="advantages"></BlocksExperts>
-      <BlocksServices :services="services"></BlocksServices>
-      <BlocksEquipment v-if="equipment" :equipment="equipment"></BlocksEquipment>
+      <BlocksWelcome></BlocksWelcome>
+      <BlocksExperts v-if="appData.advantages && appData.experts" :isMain="true" :experts="appData.experts" :advantages="appData.advantages"></BlocksExperts>
+      <BlocksServices :services="appData.services"></BlocksServices>
+      <BlocksEquipment v-if="appData.equipment" :equipment="appData.equipment"></BlocksEquipment>
       <BlocksHowWeWork></BlocksHowWeWork>
       <BlocksConsultation></BlocksConsultation>
-      <BlocksCertificates v-if="certificates" :certificates="certificates"></BlocksCertificates>
-      <BlocksContacts></BlocksContacts>
-
+      <BlocksCertificates v-if="appData.certificates" :certificates="appData.certificates"></BlocksCertificates>
+      <BlocksContacts :contacts="appData.contacts"></BlocksContacts>
     </div>
   </div>
   <div class="website-main--outer-loading" v-else>
     <p>LOADING...</p>
   </div>
-  <Footer v-if="isReady"/>
+  <Footer :footer="appData.footer" v-if="appData.isReady"/>
 </template>
 
 <script>
@@ -48,32 +34,8 @@ export default {
         {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
       ]
     }
-  },
-  data() {
-    return {
-      advantages: null,
-      certificates: null,
-      services: null,
-      experts: null,
-      equipment: null,
-      isReady: false,
-    }
-  },
-  async mounted() {
-    try {
-      const resp = await axios.get(`http://localhost:8000/api/blocks`);
-      console.log(resp);
-      if (resp.data.result) {
-        this.advantages = resp.data.blocks.Advantages;
-        this.certificates = resp.data.blocks.Certificates;
-        this.services = resp.data.blocks.Services;
-        this.experts = resp.data.blocks.Experts
-        this.equipment = resp.data.blocks.Equipment
-        this.isReady = true
-      }
-    } catch (error) {
-      console.error('Ошибка при отправке запроса:', error);
-    }
-  },
+  }, props: {
+    appData: Object,
+  }
 }
 </script>

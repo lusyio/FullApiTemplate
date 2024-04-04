@@ -191,6 +191,102 @@ class DatabaseSeeder extends Seeder
         $block->content = $equipment['content'];
         $block->save();
 
+        $contacts = [
+            'name' => 'Контакты',
+            'key' => 'Contacts',
+            'content' => json_encode([
+                'email' => 'info@lsk-stroyexpert.ru',
+                'phone' => '+7 (925) 577-01-90',
+                'address' => ' 794 Mcallister St San Francisco, 94102',
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $contacts['name'];
+        $block->key = $contacts['key'];
+        $block->content = $contacts['content'];
+        $block->save();
+
+        $header = [
+            'name' => 'Хедер',
+            'key' => 'Header',
+            'content' => json_encode([
+                'logo' => '/images/logo.svg',
+                'header_menu' => [
+                    [
+                        'link_key' => 'Каталог услуг',
+                        'link_value' => '#',
+                    ],
+                    [
+                        'link_key' => 'Оборудование',
+                        'link_value' => '#',
+                    ],
+                    [
+                        'link_key' => 'Сертификация',
+                        'link_value' => '#',
+                    ],
+                    [
+                        'link_key' => 'Контакты',
+                        'link_value' => '#',
+                    ]
+                ],
+                'phone' => '+7 (925) 577-01-90',
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $header['name'];
+        $block->key = $header['key'];
+        $block->content = $header['content'];
+        $block->save();
+
+        $footer = [
+            'name' => 'Футер',
+            'key' => 'Footer',
+            'content' => json_encode([
+                'logo' => '/images/logo.svg',
+                'copyrights' => 'Copyright © 2025 BRIX Agency | All Rights Reserved',
+                'phone' => '+7 (925) 577-01-90',
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $footer['name'];
+        $block->key = $footer['key'];
+        $block->content = $footer['content'];
+        $block->save();
+
+        $howWeWork = [
+            'name' => 'Как мы работаем',
+            'key' => 'HowWeWork',
+            'content' => json_encode([
+                'steps' => [
+                    [
+                        'image' => '/images/icons/send-order.svg',
+                        'text' => 'Оставляете заявку',
+                    ],
+                    [
+                        'image' => '/images/icons/send-message.svg',
+                        'text' => 'Оставляете заявку',
+                    ],
+                    [
+                        'image' => '/images/icons/going-to-object',
+                        'text' => 'Выезжаем на объект',
+                    ],
+                    [
+                        'image' => '/images/icons/get-document.svg',
+                        'text' => 'Выдаем заключение',
+                    ],
+                    [
+                        'image' => '/images/icons/save-document.svg',
+                        'text' => 'Храним документы в личном кабинете',
+                    ]
+                ],
+            ], JSON_UNESCAPED_UNICODE)
+        ];
+        $block = new Block();
+        $block->name = $howWeWork['name'];
+        $block->key = $howWeWork['key'];
+        $block->content = $howWeWork['content'];
+        $block->save();
+
         $services = [
             [
                 'title' => 'Сопровождение объектов строительства',
@@ -252,6 +348,14 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Испытание лакокрасочного покрытия',
                 'url' => 'ispytanie-lakokrasochnogo-pokrytiya',
+                'content' => json_encode([
+                    'service_image_preview' => '/images/service.jpg',
+                    'service_image' => '/images/service.jpg',
+                ]),
+            ],
+            [
+                'title' => 'Определение толщины покрытий',
+                'url' => 'opredelenie-tolshchiny-pokrytiy',
                 'content' => json_encode([
                     'service_image_preview' => '/images/service.jpg',
                     'service_image' => '/images/service.jpg',

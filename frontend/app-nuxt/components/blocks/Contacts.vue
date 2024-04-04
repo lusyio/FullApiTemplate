@@ -10,14 +10,14 @@
               <picture>
                 <img src="/public/images/icons/mail.svg" alt="Электронная почта"/>
               </picture>
-              <p class="contacts-screen--content-info-item-block-text">info@lsk-stroyexpert.ru</p>
+              <p class="contacts-screen--content-info-item-block-text">{{contacts.email}}</p>
             </div>
           </div>
           <div class="contacts-screen--content-info-item">
             <h6 class="contacts-screen--content-info-item-title">Номер телефона</h6>
             <div class="contacts-screen--content-info-item-block">
               <picture><img src="/public/images/icons/phone.svg" alt="Номер телефона"/></picture>
-              <p class="contacts-screen--content-info-item-block-text">+7 (925) 577-01-90</p>
+              <p class="contacts-screen--content-info-item-block-text">{{contacts.phone}}</p>
             </div>
           </div>
           <div class="contacts-screen--content-info-item">
@@ -27,7 +27,7 @@
                 <img src="/public/images/icons/map-pin.svg" alt="Адрес"/>
               </picture>
               <p class="contacts-screen--content-info-item-block-text">
-                794 Mcallister St San Francisco, 94102
+                {{ contacts.address }}
               </p>
             </div>
           </div>
@@ -41,5 +41,12 @@
 </template>
 
 <script>
-
+export default {
+  props: {
+    contacts: {
+      type: Object,
+      required: true
+    },
+  },
+}
 </script>
