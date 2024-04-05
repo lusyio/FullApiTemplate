@@ -29,7 +29,7 @@ COPY ./ /var/www/html
 COPY backend-vhost-80.conf /etc/apache2/sites-available/000-default.conf
 
 # Устанавливаем зависимости через Composer
-RUN composer install --ignore-platform-req=ext-sockets
+RUN composer install --ignore-platform-req=ext-gd --ignore-platform-req=ext-exif
 
 # Генерируем ключ приложения Laravel
 RUN php artisan key:generate
