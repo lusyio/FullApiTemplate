@@ -12,8 +12,6 @@ RUN apt-get update && \
 # Активируем модуль rewrite
 RUN a2enmod rewrite
 
-RUN a2enmod ssl
-
 # Устанавливаем Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -30,8 +28,8 @@ COPY .env /var/www/html
 # Копируем файлы бекенда в контейнер
 COPY ./ /var/www/html
 
-# Экспонируем порты 80 и 443
-EXPOSE 80 443
+# Устанавливаем зависимости бекенда
+RUN cd /var/www/html && composer install
 
 # Команда для запуска Apache
 CMD ["apache2-foreground"]
