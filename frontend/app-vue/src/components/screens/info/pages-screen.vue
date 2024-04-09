@@ -2,16 +2,14 @@
   <div class="account-screen">
     <h1 class="account-screen--title">Управление блоками</h1>
     <blocks-list></blocks-list>
-    <images-screen></images-screen>
   </div>
 </template>
 
 <script>
 import BlocksList from "@/components/elements/blocks-list.vue";
-import ImagesScreen from "@/components/elements/images-screen.vue";
 
 export default {
-  components: {ImagesScreen, BlocksList},
+  components: {BlocksList},
 
 }
 </script>
