@@ -26,17 +26,17 @@ const store = new Vuex.Store({
             store.commit('changeCoreProps', { appReady: true });
         },
         async initApp(store) {
-            // let resp = await window._$http.get('/get-app-data');
-            // console.log('Resp is');
-            // console.log(resp);
-            // if (resp) {
-            //     store.commit('setUser', resp.user);
-            //     store.commit('changeCoreProps', { appReady: true });
-            //     return;
-            // }
-            // store.commit('changeCoreProps', { appBroken: true, appReady: true });
-            // console.log('App state is');
-            // console.log(this.$store.state);
+            let resp = await window._$http.get('/get-app-data');
+            console.log('Resp is');
+            console.log(resp);
+            if (resp) {
+                store.commit('setUser', resp.user);
+                store.commit('changeCoreProps', { appReady: true });
+                return;
+            }
+            store.commit('changeCoreProps', { appBroken: true, appReady: true });
+            console.log('App state is')
+            console.log(store.state);
         }
     }
 });
