@@ -7,7 +7,7 @@
           <img class="page-header--logo-img" :src="header.logo" srcset="/images/logo@2x.svg 2x" alt="Лого"/>
         </nuxt-link>
         <nav class="page-header--nav-menu">
-          <ButtonWithIcon v-for="(item, index) in header.header_menu" :key="index"
+          <ButtonWithIcon v-for="(item, index) in header.items" :key="index"
                           :isMain="isMain" :text="item.link_key"
                           :image="isMain ? '/images/icons/arrow-down.svg' : '/images/icons/arrow-down-black.svg'"/>
         </nav>

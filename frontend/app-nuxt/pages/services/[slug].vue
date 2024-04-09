@@ -83,7 +83,7 @@ export default {
     handleDataLoad() {
       this.serviceSlug = this.$route.params.slug;
       if (this.appData.services) {
-        this.serviceData = this.appData.services.services_items[this.serviceSlug]
+        this.serviceData = this.appData.services.items[this.serviceSlug]
         if (!this.serviceData) {
           this.$nuxt.$router.push({path: '/'});
         } else {

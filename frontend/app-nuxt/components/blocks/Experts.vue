@@ -5,7 +5,7 @@
         <h2 class="experts-screen--info-title title">{{ experts.title }}</h2>
         <div class="experts-screen--info-box">
           <div>
-            <p v-for="(paragraph, index) in experts.text_paragraphs" :key="index" class="experts-screen--info-text">{{ paragraph }}</p>
+            <p v-for="(paragraph, index) in experts.items[0]" :key="index" class="experts-screen--info-text">{{ paragraph }}</p>
           </div>
         </div>
         <div class="experts-screen--info-director">
@@ -20,7 +20,7 @@
     <div class="experts-screen--inner">
       <div class="experts-screen--info">
         <h2 class="experts-screen--info-title">{{ experts.title }}</h2>
-        <p v-for="(paragraph, index) in experts.text_paragraphs" :key="index" class="experts-screen--info-text">{{ paragraph }}</p>
+        <p v-for="(paragraph, index) in experts.items[0]" :key="index" class="experts-screen--info-text">{{ paragraph }}</p>
       </div>
       <div class="director-screen--inner director-screen--inner-mobile">
         <p class="director-screen--job">{{ experts.director_job }}</p>

@@ -12,7 +12,7 @@ use Illuminate\Support\Carbon;
  * @property int $id
  * @property string $name
  * @property string $key
- * @property mixed $content
+ * @property array $content
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -21,4 +21,19 @@ use Illuminate\Support\Carbon;
 class Block extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'content' => 'array',
+    ];
+
+    protected $fillable = [
+        'name',
+        'key',
+        'content',
+    ];
+
+    public function contents()
+    {
+        return $this->hasMany(ContentElement::class);
+    }
 }

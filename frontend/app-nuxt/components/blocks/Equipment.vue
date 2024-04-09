@@ -25,7 +25,7 @@
             class="equipment--items-item"
         >
           <div class="equipment--items-item-shadow"></div>
-          <picture><img :src="item.image" :alt="item.title"/></picture>
+          <picture><img :src="'http://localhost:8010' + item.image" :alt="item.title"/></picture>
           <div class="equipment--items-item-text-block">
             <h6 class="equipment--items-item-title">{{ item.title }}</h6>
             <p class="equipment--items-item-tag">{{ item.category }}</p>
@@ -54,11 +54,11 @@ export default {
   },
   computed: {
     categories() {
-      let equipmentArray = Object.values(this.equipment.equipment_items);
+      let equipmentArray = Object.values(this.equipment.items);
       return Array.from(new Set(equipmentArray.map(item => item.category)));
     },
     filteredItems() {
-      let equipmentArray = Object.values(this.equipment.equipment_items);
+      let equipmentArray = Object.values(this.equipment.items);
       return this.selectedCategory ? equipmentArray.filter(item => item.category === this.selectedCategory) : this.equipment;
     }
   },

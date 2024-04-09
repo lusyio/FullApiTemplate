@@ -22,11 +22,11 @@
       <div class="certificates-screen--items">
         <div class="swiper swiper-desktop">
           <div class="swiper-wrapper">
-            <div v-for="(item, index) in certificates.certs" :key="index" class="swiper-slide certificates-screen--items-item">
+            <div v-for="(item, index) in certificates.items" :key="index" class="swiper-slide certificates-screen--items-item">
               <picture
               ><img
                   class="certificates-screen--items-item-photo"
-                  src="/public/images/certificate.jpg"
+                  :src="'http://localhost:8010' + item.image"
                   alt="Сертификат"
               /></picture>
               <div class="certificates-screen--items-item-shadow--outer">
@@ -50,11 +50,11 @@
       <div class="certificates-screen--items-mobile">
         <div class="swiper swiper-mobile">
           <div class="swiper-wrapper">
-            <div v-for="(item, index) in certificates.certs" :key="index" class="swiper-slide certificates-screen--items-item">
+            <div v-for="(item, index) in certificates.items" :key="index" class="swiper-slide certificates-screen--items-item">
               <picture
               ><img
                   class="certificates-screen--items-item-photo"
-                  src="/public/images/certificate.jpg"
+                  :src="'http://localhost:8010' + item.image"
                   alt="Сертификат"
               /></picture>
               <div class="certificates-screen--items-item-shadow--outer">

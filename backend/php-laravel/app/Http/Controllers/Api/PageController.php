@@ -43,7 +43,7 @@ class PageController extends Controller
             $decodedBlocks = [];
 
             foreach ($blocks as $block) {
-                $decodedContent = json_decode($block->content, true);
+                $decodedContent = $block->content;
                 $decodedBlocks[$block->key] = $decodedContent;
             }
 

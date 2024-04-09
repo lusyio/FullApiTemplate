@@ -4,7 +4,7 @@
       <h2 class="howWeWork-screen--title">{{ howWeWork.title }}</h2>
       <div class="howWeWork-screen--content">
         <ul class="howWeWork-screen--content-items">
-          <li v-for="(item, index) in howWeWork.steps" :key="index" class="howWeWork-screen--content-items-item">
+          <li v-for="(item, index) in howWeWork.items" :key="index" class="howWeWork-screen--content-items-item">
             <picture>
               <img :src="item.image" :alt="item.text"/>
             </picture>

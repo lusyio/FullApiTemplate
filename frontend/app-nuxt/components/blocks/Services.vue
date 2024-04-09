@@ -10,7 +10,7 @@
       </div>
       <div class="services-screen--items">
         <nuxt-link
-            v-for="(service, index) in services.services_items"
+            v-for="(service, index) in services.items"
             :key="index"
             class="services-screen--items-item"
             :to="`/services/${index}`"
