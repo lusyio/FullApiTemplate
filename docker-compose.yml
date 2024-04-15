@@ -8,8 +8,7 @@ services:
     environment:
       NITRO_PORT: 443
     volumes:
-      - ./certs/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
-      - ./certs/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+      - ./certs/fullchain.pem:/etc/nginx/certs
     ports:
       - "443:443"
 
@@ -18,8 +17,7 @@ services:
       context: ./frontend/app-vue
       dockerfile: Dockerfile
     volumes:
-      - ./certs/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
-      - ./certs/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+      - ./certs/fullchain.pem:/etc/nginx/certs
     ports:
       - "444:443"
 
@@ -37,8 +35,7 @@ services:
     volumes:
       - ./backend/php-laravel/backend-vhost-80.conf:/etc/apache2/sites-available/000-default.conf
       - ./backend/php-laravel:/var/www/html
-      - ./certs/fullchain.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/fullchain.pem:ro
-      - ./certs/privkey.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/privkey.pem:ro
+      - ./certs:/etc/letsencrypt/live/lsk-stroyexpert.ru:ro
 
   admin-php-laravel-backend:
     container_name: admin-php-laravel-backend
@@ -54,8 +51,7 @@ services:
     volumes:
       - ./backend/admin-php-laravel/backend-vhost-80.conf:/etc/apache2/sites-available/000-default.conf
       - ./backend/admin-php-laravel:/var/www/html
-      - ./certs/fullchain.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/fullchain.pem:ro
-      - ./certs/privkey.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/privkey.pem:ro
+      - ./certs:/etc/letsencrypt/live/lsk-stroyexpert.ru:ro
 
   postgres:
     image: postgres:15
