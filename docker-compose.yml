@@ -8,8 +8,8 @@ services:
     environment:
       NITRO_PORT: 443
     volumes:
-      - ./lsk-stroyexpert.ru/fullchain.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/fullchain.pem:ro
-      - ./lsk-stroyexpert.ru/privkey.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/privkey.pem:ro
+      - ./lsk-stroyexpert.ru/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - ./lsk-stroyexpert.ru/privkey.pem:/etc/nginx/certs/privkey.pem:ro
     ports:
       - "443:443"
 
@@ -18,8 +18,8 @@ services:
       context: ./frontend/app-vue
       dockerfile: Dockerfile
     volumes:
-      - ./lsk-stroyexpert.ru/fullchain.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/fullchain.pem:ro
-      - ./lsk-stroyexpert.ru/privkey.pem:/etc/letsencrypt/live/lsk-stroyexpert.ru/privkey.pem:ro
+      - ./lsk-stroyexpert.ru/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - ./lsk-stroyexpert.ru/privkey.pem:/etc/nginx/certs/privkey.pem:ro
     ports:
       - "444:443"
 
