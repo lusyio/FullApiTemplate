@@ -95,7 +95,7 @@ const http = {
             'X-Requested-With': 'XMLHttpRequest',
             'Content-Type': 'application/json'
         };
-        axios.defaults.baseURL = 'http://localhost:8010/api';
+        axios.defaults.baseURL = 'https://lsk-stroyexpert.ru:8010/api';
         axios.defaults.withCredentials = true;
     },
     getTimezoneOffset() {

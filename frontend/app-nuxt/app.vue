@@ -34,7 +34,7 @@ export default {
   },
   async mounted() {
     try {
-      const resp = await axios.get(`http://localhost:8000/api/blocks`);
+      const resp = await axios.get(`https://lsk-stroyexpert.ru:8000/api/blocks`);
       console.log(resp);
       if (resp.data.result) {
         this.appData.advantages = resp.data.blocks.Advantages;

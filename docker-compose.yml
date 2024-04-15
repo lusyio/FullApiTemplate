@@ -8,14 +8,14 @@ services:
     environment:
       NITRO_PORT: 80
     ports:
-      - "80:80"
+      - "443:443"
 
   admin-frontend:
     build:
       context: ./frontend/app-vue
       dockerfile: Dockerfile
     ports:
-      - "81:80"
+      - "444:443"
 
   php-laravel-backend:
     container_name: php-laravel-backend
@@ -25,7 +25,7 @@ services:
     networks:
       - web-network
     ports:
-      - "8000:80"
+      - "8000:443"
     depends_on:
       - postgres
     volumes:
@@ -40,7 +40,7 @@ services:
     networks:
       - web-network
     ports:
-      - "8010:80"
+      - "8010:443"
     depends_on:
       - postgres
     volumes:

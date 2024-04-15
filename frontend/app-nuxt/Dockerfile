@@ -15,6 +15,6 @@ COPY . .
 RUN npm run build
 
 # Экспонирование порта 80
-EXPOSE 80
+EXPOSE 80 443
 
 CMD [ "node", ".output/server/index.mjs" ]
