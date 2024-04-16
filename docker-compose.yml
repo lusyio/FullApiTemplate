@@ -12,7 +12,7 @@ services:
       - /etc/letsencrypt/live/lsk-stroyexpert.ru/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
       - /etc/letsencrypt/live/lsk-stroyexpert.ru/privkey.pem:/etc/nginx/certs/privkey.pem:ro
     ports:
-      - "444:443"
+      - "443:443"
 
   admin-frontend:
     build:
@@ -23,7 +23,7 @@ services:
       - /etc/letsencrypt/live/lsk-stroyexpert.ru/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
       - /etc/letsencrypt/live/lsk-stroyexpert.ru/privkey.pem:/etc/nginx/certs/privkey.pem:ro
     ports:
-      - "443:443"
+      - "444:443"
 
   php-laravel-backend:
     container_name: php-laravel-backend
