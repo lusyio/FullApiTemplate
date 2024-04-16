@@ -21,7 +21,7 @@ FROM nginx:latest
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Экспонирование порта 80
-EXPOSE 80
+EXPOSE 80 443
 
 # Команда для запуска Nginx в режиме демона
 CMD ["nginx", "-g", "daemon off;"]
