@@ -6,20 +6,22 @@ up: # Разворачивание и запуск
 	@if [ ! -d "data" ]; then \
 		mkdir data; \
 	fi
-	@echo 'Устанавливаю зависимости'
-	cd ./backend/php-laravel && composer install
-	cd ./backend/admin-php-laravel && composer install
-	cd ./backend/php-laravel && php artisan key:generate
-	cd ./backend/admin-php-laravel && php artisan key:generate
-	@echo 'Выдаю права'
-	sudo chmod -R 775 ./data
-	cd ./backend/php-laravel && sudo chown -R www-data:www-data storage
-	cd ./backend/admin-php-laravel && sudo chown -R www-data:www-data storage
-	cd ./backend/php-laravel && sudo chmod -R 775 storage
-	cd ./backend/admin-php-laravel && sudo chmod -R 775 storage
 	@echo 'Собираю основной проект'
 	docker-compose up -d --build
 	@echo 'Подключение craftable'
+
+	@echo 'Устанавливаю зависимости'
+	docker exec -it php-laravel-backend composer install
+	docker exec -it admin-php-laravel-backend composer install
+	docker exec -it php-laravel-backend php artisan key:generate
+	docker exec -it admin-php-laravel-backend php artisan key:generate
+	@echo 'Выдаю права'
+	sudo chmod -R 775 ./data
+	docker exec -it php-laravel-backend chown -R www-data:www-data storage
+	docker exec -it admin-php-laravel-backend chown -R www-data:www-data storage
+	docker exec -it php-laravel-backend chmod -R 775 storage
+	cdocker exec -it admin-php-laravel-backend chmod -R 775 storage
+
 	make migrate
 	make seed
 	@echo 'Проект собран'
