@@ -8,7 +8,6 @@ WORKDIR /app
 COPY package*.json ./
 
 # Установка зависимостей
-RUN npm install
 
 # Копирование и сборка приложения
 COPY . .
